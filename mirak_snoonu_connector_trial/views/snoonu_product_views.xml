@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="snoonu_product_view_list" model="ir.ui.view">
+        <field name="name">snoonu.product.list</field>
+        <field name="model">snoonu.product</field>
+        <field name="arch" type="xml">
+            <list string="Snoonu Products" editable="bottom" multi_edit="1"
+                  decoration-danger="state == 'error'" decoration-muted="not is_available">
+                <header>
+                    <button name="action_sync" type="object" string="Send to Snoonu" class="btn-primary"/>
+                    <button name="action_hide" type="object" string="Hide on Snoonu"/>
+                    <button name="action_show" type="object" string="Show on Snoonu"/>
+                    <button name="action_reset" type="object" string="Mark to Send"/>
+                </header>
+                <field name="account_id" optional="hide"/>
+                <field name="product_id"/>
+                <field name="sku"/>
+                <field name="lst_price" optional="show"/>
+                <field name="qty_available" optional="show"/>
+                <field name="is_available" widget="boolean_toggle"/>
+                <field name="state" widget="badge" decoration-success="state == 'synced'"
+                       decoration-info="state == 'pending'" decoration-danger="state == 'error'"/>
+                <field name="last_sync_at" optional="show"/>
+                <field name="last_error" optional="hide"/>
+                <field name="company_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="snoonu_product_view_form" model="ir.ui.view">
+        <field name="name">snoonu.product.form</field>
+        <field name="model">snoonu.product</field>
+        <field name="arch" type="xml">
+            <form string="Snoonu Product">
+                <header>
+                    <button name="action_sync" type="object" string="Send to Snoonu" class="btn-primary"/>
+                    <button name="action_hide" type="object" string="Hide on Snoonu" invisible="not is_available"/>
+                    <button name="action_show" type="object" string="Show on Snoonu" invisible="is_available"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Hidden" bg_color="text-bg-secondary" invisible="is_available"/>
+                    <group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="product_id"/>
+                            <field name="sku"/>
+                            <field name="is_available" widget="boolean_toggle"/>
+                        </group>
+                        <group>
+                            <field name="lst_price"/>
+                            <field name="qty_available"/>
+                            <field name="last_sync_at"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Error" invisible="not last_error">
+                        <field name="last_error" nolabel="1" colspan="2" class="text-danger"/>
+                    </group>
+                    <group string="Last Data Sent" invisible="not last_document">
+                        <field name="last_document" nolabel="1" colspan="2" widget="code" options="{'mode': 'json'}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="snoonu_product_view_search" model="ir.ui.view">
+        <field name="name">snoonu.product.search</field>
+        <field name="model">snoonu.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="sku"/>
+                <field name="product_id"/>
+                <field name="account_id"/>
+                <filter name="error" string="Errors" domain="[('state', '=', 'error')]"/>
+                <filter name="pending" string="To Send" domain="[('state', '=', 'pending')]"/>
+                <filter name="synced" string="Synced" domain="[('state', '=', 'synced')]"/>
+                <separator/>
+                <filter name="hidden" string="Hidden on Snoonu" domain="[('is_available', '=', False)]"/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="by_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="by_account" string="Account" context="{'group_by': 'account_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="snoonu_product_action" model="ir.actions.act_window">
+        <field name="name">Snoonu Products</field>
+        <field name="res_model">snoonu.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No product on Snoonu yet</p>
+            <p>Use "Add Products" on the Snoonu account, or select products in Inventory and use
+                Action > Add to Snoonu.</p>
+        </field>
+    </record>
+</odoo>

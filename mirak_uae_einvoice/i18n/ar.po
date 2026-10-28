@@ -1,0 +1,2444 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mirak_uae_einvoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-20 03:55+0000\n"
+"PO-Revision-Date: 2026-10-20 03:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: ar\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "%(done)s sent, %(failed)s not sent (see the E-Invoice tab)."
+msgstr "تم إرسال %(done)s، ولم يُرسل %(failed)s (راجع تبويب الفوترة الإلكترونية)."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_partner.py:0
+msgid "%s has no Peppol participant ID."
+msgstr "لا يملك %s معرّف مشارك في Peppol."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move.py:0
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "%s is not a customer invoice or credit note of a company with a TRN."
+msgstr "%s ليس فاتورة عميل أو إشعارًا دائنًا لشركة لديها رقم تسجيل ضريبي."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "%s line(s) without a matching product."
+msgstr "%s سطر/أسطر بدون منتج مطابق."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "%s problem(s) to fix before sending."
+msgstr "%s مشكلة يجب إصلاحها قبل الإرسال."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "%s was already sent."
+msgstr "تم إرسال %s مسبقًا."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid ""
+"%s was sent as an e-invoice: issue a credit note instead of changing it."
+msgstr "تم إرسال %s كفاتورة إلكترونية: أصدر إشعارًا دائنًا بدلًا من تعديلها."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid ""
+"(Official Schematron not run: install the saxonche Python package to enable "
+"it.)"
+msgstr "(لم تُنفّذ قواعد Schematron الرسمية: ثبّت حزمة Python المسماة saxonche لتفعيلها.)"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "(new supplier %s)"
+msgstr "(مورّد جديد %s)"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "(totals differ, check it)"
+msgstr "(الإجماليات مختلفة، يرجى التحقق)"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "(warning: addressed to TRN %s, not to your company)"
+msgstr "(تنبيه: موجّهة إلى رقم التسجيل الضريبي %s وليس إلى شركتك)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_partner__mirak_ae_endpoint_scheme
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_users__mirak_ae_endpoint_scheme
+msgid "0235 for UAE participants."
+msgstr "0235 للمشاركين في الإمارات."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "10-digit TIN"
+msgstr "الرقم الضريبي TIN من 10 أرقام"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "15 digits"
+msgstr "15 رقمًا"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid ""
+"15 digits issued by the Federal Tax Authority. Your Peppol ID is built from "
+"its first 10 digits (TIN)."
+msgstr "15 رقمًا صادرة عن الهيئة الاتحادية للضرائب. يتكوّن معرّفك في Peppol من أول 10 أرقام منه (TIN)."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<i class=\"fa fa-check-circle\"/> E-invoicing is mandatory"
+msgstr "<i class=\"fa fa-check-circle\"/> الفوترة الإلكترونية إلزامية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid ""
+"<span class=\"badge text-bg-danger\" invisible=\"provider_id\">No service "
+"provider</span>"
+msgstr "<span class=\"badge text-bg-danger\" invisible=\"provider_id\">لا يوجد مزوّد خدمة</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span class=\"o_mirak_ae_card_label\">Accepted · مقبولة</span>"
+msgstr "<span class=\"o_mirak_ae_card_label\">مقبولة</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span class=\"o_mirak_ae_card_label\">Rejected / errors · مرفوضة</span>"
+msgstr "<span class=\"o_mirak_ae_card_label\">مرفوضة / أخطاء</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span class=\"o_mirak_ae_card_label\">Sent, awaiting · مُرسلة</span>"
+msgstr "<span class=\"o_mirak_ae_card_label\">مُرسلة، بانتظار الرد</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span class=\"o_mirak_ae_card_label\">To send · للإرسال</span>"
+msgstr "<span class=\"o_mirak_ae_card_label\">للإرسال</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "<span class=\"text-muted small\">E-Invoice</span>"
+msgstr "<span class=\"text-muted small\">الفاتورة الإلكترونية</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span class=\"text-muted\" invisible=\"not provider_id\">Provider:</span>"
+msgstr "<span class=\"text-muted\" invisible=\"not provider_id\">المزوّد:</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid ""
+"<span invisible=\"level != 'high'\">Your company is ready for UAE e-invoicing</span>\n"
+"                            <span invisible=\"level != 'mid'\">Almost there: a few points to settle</span>\n"
+"                            <span invisible=\"level != 'low'\">Let's get your company ready</span>"
+msgstr ""
+"<span invisible=\"level != 'high'\">شركتك جاهزة للفوترة الإلكترونية في الإمارات</span>\n"
+"                            <span invisible=\"level != 'mid'\">اقتربت من الجاهزية: بقيت بعض النقاط</span>\n"
+"                            <span invisible=\"level != 'low'\">لنجهّز شركتك للفوترة الإلكترونية</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid ""
+"<span invisible=\"level != 'high'\">شركتك جاهزة للفوترة الإلكترونية في الإمارات</span>\n"
+"                            <span invisible=\"level != 'mid'\">اقتربت من الجاهزية: بقيت بعض النقاط</span>\n"
+"                            <span invisible=\"level != 'low'\">لنجهّز شركتك للفوترة الإلكترونية</span>"
+msgstr ""
+"<span invisible=\"level != 'high'\">Your company is ready for UAE e-invoicing</span>\n"
+"                            <span invisible=\"level != 'mid'\">Almost there: a few points to settle</span>\n"
+"                            <span invisible=\"level != 'low'\">Let's get your company ready</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "<span>%</span>"
+msgstr "<span>%</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "<span>:</span>"
+msgstr "<span>:</span>"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "<span>From</span>"
+msgstr "<span>اعتبارًا من</span>"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_category__ae
+msgid "AE - Reverse charge"
+msgstr "AE - الاحتساب العكسي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__api_key
+msgid "API Key"
+msgstr "مفتاح API"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "API Paths"
+msgstr "مسارات API"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__api_url
+msgid "API URL"
+msgstr "رابط API"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__auh
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__auh
+msgid "Abu Dhabi"
+msgstr "أبوظبي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__mock_behaviour__accept
+msgid "Accept every document"
+msgstr "قبول كل المستندات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__mock_behaviour__alternate
+msgid "Accept or reject (alternately)"
+msgstr "قبول أو رفض (بالتناوب)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__acceptance_rate
+msgid "Acceptance Rate"
+msgstr "نسبة القبول"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Acceptance rate:"
+msgstr "نسبة القبول:"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__accepted
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__accepted
+msgid "Accepted"
+msgstr "مقبولة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Accredited Service Provider (ASP)"
+msgstr "مزوّد الخدمة المعتمد (ASP)"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Actions"
+msgstr "الإجراءات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: mirak_uae_einvoice
+#: model:res.groups,name:mirak_uae_einvoice.group_mirak_ae_manager
+msgid "Administrator"
+msgstr "مدير"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__ajm
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__ajm
+msgid "Ajman"
+msgstr "عجمان"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Allowance"
+msgstr "خصم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness__level__mid
+msgid "Almost ready"
+msgstr "شبه جاهزة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Already imported (UUID %s)."
+msgstr "تم استيرادها مسبقًا (UUID %s)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_mandate_phase__custom
+msgid "Another date"
+msgstr "تاريخ آخر"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Answer Format"
+msgstr "صيغة الرد"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__attempt
+msgid "Attempt"
+msgstr "المحاولة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__auth_header
+msgid "Auth Header"
+msgstr "ترويسة المصادقة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__auth_prefix
+msgid "Auth Prefix"
+msgstr "بادئة المصادقة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_max_attempts
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_max_attempts
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Automatic Retries"
+msgstr "إعادة المحاولة التلقائية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_scope__b2b
+msgid "B2B: business"
+msgstr "B2B: شركات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_scope__b2c
+msgid "B2C: consumer (not exchanged)"
+msgstr "B2C: مستهلك (لا يتم تبادلها)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_scope__b2g
+msgid "B2G: government"
+msgstr "B2G: جهات حكومية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_beneficiary_trn
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_move__mirak_ae_beneficiary_trn
+msgid "BTAE-01, required for a supply involving a free trade zone."
+msgstr "BTAE-01، مطلوب للتوريد المتعلق بمنطقة حرة."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_credit_reason
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_move__mirak_ae_credit_reason
+msgid "BTAE-03, mandatory on credit notes (rule ibr-158-ae)."
+msgstr "BTAE-03، إلزامي في الإشعارات الدائنة (القاعدة ibr-158-ae)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_uuid
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_move__mirak_ae_uuid
+msgid "BTAE-07, the unique identifier of this e-invoice."
+msgstr "BTAE-07، المعرّف الفريد لهذه الفاتورة الإلكترونية."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_product__mirak_ae_goods_type
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_template__mirak_ae_goods_type
+msgid ""
+"BTAE-09. Required when this product is sold under the domestic reverse "
+"charge (rule ibr-166-ae)."
+msgstr "BTAE-09. مطلوب عند بيع هذا المنتج بآلية الاحتساب العكسي المحلية (القاعدة ibr-166-ae)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_product__mirak_ae_item_type
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_template__mirak_ae_item_type
+msgid ""
+"BTAE-13. Goods need an HS code, services a service accounting code, \"Both\""
+" needs the two (rules ibr-184-ae to ibr-186-ae). Leave empty to omit the "
+"item type."
+msgstr "BTAE-13. السلع تحتاج إلى رمز HS، والخدمات إلى رمز محاسبة الخدمة، و\"كلاهما\" يحتاج إلى الرمزين (القواعد ibr-184-ae إلى ibr-186-ae). اتركه فارغًا لعدم ذكر نوع البند."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_principal_trn
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_move__mirak_ae_principal_trn
+msgid "BTAE-14, required for disclosed agent billing."
+msgstr "BTAE-14، مطلوب لفوترة الوكيل المُفصَح عنه."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_product__mirak_ae_sac_code
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_template__mirak_ae_sac_code
+msgid "BTAE-17, scheme SAC."
+msgstr "BTAE-17، المخطط SAC."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__21
+msgid "Banker's draft"
+msgstr "حوالة مصرفية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_exemption_code__dl8_46_3
+msgid "Bare land"
+msgstr "الأراضي الفضاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__api_url
+msgid "Base address of the provider API, e.g. https://api.provider.ae/v1"
+msgstr "العنوان الأساسي لواجهة API الخاصة بالمزوّد، مثل https://api.provider.ae/v1"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_beneficiary_trn
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_beneficiary_trn
+msgid "Beneficiary TRN"
+msgstr "رقم التسجيل الضريبي للمستفيد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__blocked
+msgid "Blocked by pre-validation"
+msgstr "موقوفة بسبب التحقق المسبق"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/send_wizard.py:0
+msgid "Blocked by the pre-validation (to correct): %s"
+msgstr "موقوفة بسبب التحقق المسبق (يجب تصحيحها): %s"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_item_type__b
+msgid "Both"
+msgstr "كلاهما"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_legal_id_type__cd
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_legal_id_type__cd
+msgid "Cabinet decision"
+msgstr "قرار مجلس الوزراء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_exemption_code__dl8_46_1
+msgid "Certain financial services"
+msgstr "بعض الخدمات المالية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Charge"
+msgstr "رسوم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__name
+msgid "Check"
+msgstr "التحقق"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "Check Again"
+msgstr "إعادة التحقق"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Check E-Invoice"
+msgstr "التحقق من الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "Check on Peppol"
+msgstr "التحقق في Peppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_peppol_checked
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_peppol_checked
+msgid "Checked On"
+msgstr "تاريخ التحقق"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__20
+msgid "Cheque"
+msgstr "شيك"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_config_settings.py:0
+msgid "Choose your service provider first."
+msgstr "اختر مزوّد الخدمة أولًا."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_import_wizard_form
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_legal_id_type__tl
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_legal_id_type__tl
+msgid "Commercial / Trade license"
+msgstr "رخصة تجارية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__company_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__company_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__company_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__company_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__company_id
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__company
+msgid "Company"
+msgstr "الشركة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Company Identifiers"
+msgstr "معرّفات الشركة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_config
+msgid "Configuration"
+msgstr "التهيئة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Configure Providers"
+msgstr "تهيئة المزوّدين"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Connection"
+msgstr "الاتصال"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/einvoice_provider.py:0
+msgid "Connection failed"
+msgstr "فشل الاتصال"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/einvoice_provider.py:0
+msgid "Connection works"
+msgstr "الاتصال يعمل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__connector
+msgid "Connector"
+msgstr "الموصل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_continuous_supply
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_continuous_supply
+msgid "Continuous Supply"
+msgstr "توريد مستمر"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Correct and Resend"
+msgstr "تصحيح وإعادة الإرسال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_accepted
+msgid "Count Accepted"
+msgstr "عدد المقبولة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_draft
+msgid "Count Draft"
+msgstr "عدد غير المُرسلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_error
+msgid "Count Error"
+msgstr "عدد الأخطاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_problems
+msgid "Count Problems"
+msgstr "عدد المشكلات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_ready
+msgid "Count Ready"
+msgstr "عدد الجاهزة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_rejected
+msgid "Count Rejected"
+msgstr "عدد المرفوضة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_sent
+msgid "Count Sent"
+msgstr "عدد المُرسلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_to_send
+msgid "Count To Send"
+msgstr "عدد ما يجب إرساله"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__count_total
+msgid "Count Total"
+msgstr "العدد الإجمالي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_emirate
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_emirate
+msgid "Country subdivision of the address (rule ibr-128-ae)."
+msgstr "التقسيم الإداري للعنوان (القاعدة ibr-128-ae)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__create_partners
+msgid "Create Unknown Suppliers"
+msgstr "إنشاء المورّدين غير المعروفين"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__move_ids
+msgid "Created Bills"
+msgstr "فواتير المورّدين المُنشأة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__create_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__create_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__create_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__create_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__create_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__create_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_credit_reason
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_credit_reason
+msgid "Credit Note Reason"
+msgstr "سبب الإشعار الدائن"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__54
+msgid "Credit card"
+msgstr "بطاقة ائتمان"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__30
+msgid "Credit transfer"
+msgstr "تحويل مصرفي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_goods_type__dl8_48_3_1
+msgid "Crude or refined oil"
+msgstr "النفط الخام أو المكرر"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_invoices
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_invoices
+msgid "Customer E-Invoices"
+msgstr "الفواتير الإلكترونية للعملاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__customers
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__dly
+msgid "Daily"
+msgstr "يومي"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__create_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__days_left
+msgid "Days Left"
+msgstr "الأيام المتبقية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__55
+msgid "Debit card"
+msgstr "بطاقة خصم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_deemed_supply
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_deemed_supply
+msgid "Deemed Supply"
+msgstr "توريد اعتباري"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__49
+msgid "Direct debit"
+msgstr "خصم مباشر"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_agent_billing
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_agent_billing
+msgid "Disclosed Agent Billing"
+msgstr "فوترة الوكيل المُفصَح عنه"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_tax__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__move_id
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Document"
+msgstr "المستند"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__move_ids
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__documents
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_documents
+msgid "Documents"
+msgstr "المستندات"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid ""
+"Documents with problems are not sent: they stay \"Not sent\" with the list of\n"
+"                        corrections in their E-Invoice tab."
+msgstr ""
+"المستندات التي بها مشكلات لا تُرسل: تبقى \"غير مُرسلة\" مع قائمة\n"
+"                        التصحيحات في تبويب الفوترة الإلكترونية."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__done
+msgid "Done"
+msgstr "تم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__dxb
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__dxb
+msgid "Dubai"
+msgstr "دبي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_category__e
+msgid "E - Exempt"
+msgstr "E - معفى"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_invoice_tree
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "E-Invoice"
+msgstr "الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_account_invoice_filter
+msgid "E-Invoice Accepted"
+msgstr "فاتورة إلكترونية مقبولة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_product__mirak_ae_item_type
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__mirak_ae_item_type
+msgid "E-Invoice Item Type"
+msgstr "نوع البند في الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_log_ids
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_log_ids
+msgid "E-Invoice Log"
+msgstr "سجل الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_account_invoice_filter
+msgid "E-Invoice Rejected"
+msgstr "فاتورة إلكترونية مرفوضة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_state
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_state
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "E-Invoice Status"
+msgstr "حالة الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_uuid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_uuid
+msgid "E-Invoice UUID"
+msgstr "المعرّف الفريد للفاتورة الإلكترونية (UUID)"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_account_invoice_filter
+msgid "E-Invoice to Send"
+msgstr "فاتورة إلكترونية للإرسال"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+msgid "E-Invoices Accepted"
+msgstr "الفواتير الإلكترونية المقبولة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+msgid "E-Invoices Sent"
+msgstr "الفواتير الإلكترونية المُرسلة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+msgid "E-Invoices to Send"
+msgstr "الفواتير الإلكترونية للإرسال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_scope
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_scope
+msgid "E-Invoicing"
+msgstr "الفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__mandate_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_mandate_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_mandate_date
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "E-Invoicing Mandatory From"
+msgstr "الفوترة الإلكترونية إلزامية اعتبارًا من"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "E-invoice accepted"
+msgstr "تم قبول الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "E-invoice rejected"
+msgstr "تم رفض الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "E-invoice reset"
+msgstr "تمت إعادة تعيين الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "E-invoice sending failed (attempt %s)"
+msgstr "فشل إرسال الفاتورة الإلكترونية (المحاولة %s)"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "E-invoice sent to the service provider"
+msgstr "تم إرسال الفاتورة الإلكترونية إلى مزوّد الخدمة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_goods_type__dl8_48_8_2
+msgid "Electronic devices"
+msgstr "الأجهزة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_emirate
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_emirate
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_emirate
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_emirate
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Emirate"
+msgstr "الإمارة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Emirate of the company address."
+msgstr "إمارة عنوان الشركة."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_legal_id_type__eid
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_legal_id_type__eid
+msgid "Emirates ID"
+msgstr "الهوية الإماراتية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__lookup_path
+msgid "Empty when the provider has no participant lookup."
+msgstr "اتركه فارغًا إذا لم يوفّر المزوّد البحث عن المشاركين."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__company_id
+msgid "Empty: shared by all companies."
+msgstr "فارغ: مشترك بين جميع الشركات."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__provider_environment
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__environment
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_provider_environment
+msgid "Environment"
+msgstr "البيئة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__error
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__error
+msgid "Error"
+msgstr "خطأ"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__q15
+msgid "Every 15 days"
+msgstr "كل 15 يومًا"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__q45
+msgid "Every 45 days"
+msgstr "كل 45 يومًا"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__q60
+msgid "Every 60 days"
+msgstr "كل 60 يومًا"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_log
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_log
+msgid "Exchange Log"
+msgstr "سجل التبادل"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Exchanges with the Service Provider"
+msgstr "التبادلات مع مزوّد الخدمة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_tax__mirak_ae_exemption_code
+msgid "Exemption Reason"
+msgstr "سبب الإعفاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_exports
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_exports
+msgid "Exports"
+msgstr "الصادرات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__mock_behaviour__error
+msgid "Fail (provider error)"
+msgstr "فشل (خطأ لدى المزوّد)"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_log_search
+msgid "Failed"
+msgstr "فاشلة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "Fix"
+msgstr "إصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__fix_domain
+msgid "Fix Domain"
+msgstr "نطاق الإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__fix_model
+msgid "Fix Model"
+msgstr "نموذج الإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__fix_res_id
+msgid "Fix Res"
+msgstr "سجل الإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__fix_type
+msgid "Fix Type"
+msgstr "نوع الإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_partner__mirak_ae_endpoint_id
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_users__mirak_ae_endpoint_id
+msgid "For UAE businesses: the 10-digit TIN (first 10 digits of the TRN)."
+msgstr "للشركات في الإمارات: الرقم الضريبي TIN المكوّن من 10 أرقام (أول 10 أرقام من رقم التسجيل الضريبي)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_free_trade_zone
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_free_trade_zone
+msgid "Free Trade Zone"
+msgstr "منطقة حرة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_billing_frequency
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_billing_frequency
+msgid "Frequency of Billing"
+msgstr "دورية الفوترة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__fuj
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__fuj
+msgid "Fujairah"
+msgstr "الفجيرة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_endpoint_id
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_endpoint_id
+msgid "Given by your Accredited Service Provider at onboarding (0235 + TIN)."
+msgstr "يمنحه مزوّد الخدمة المعتمد عند التسجيل (0235 + TIN)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_goods_type__dl8_48_8_1
+msgid "Gold and diamonds"
+msgstr "الذهب والألماس"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_item_type__g
+msgid "Goods"
+msgstr "سلع"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__dl8_61_1_d
+msgid "Goods or services returned, in full or in part"
+msgstr "إرجاع السلع أو الخدمات كليًا أو جزئيًا"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_product__mirak_ae_hs_code
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__mirak_ae_hs_code
+msgid "HS Code"
+msgstr "رمز النظام المنسّق (HS)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__hyr
+msgid "Half-yearly"
+msgstr "نصف سنوي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_product__mirak_ae_hs_code
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_product_template__mirak_ae_hs_code
+msgid "Harmonized System code (ibt-158, scheme HS)."
+msgstr "رمز النظام المنسّق (ibt-158، المخطط HS)."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "How many times a failed sending is retried automatically."
+msgstr "عدد مرات إعادة محاولة الإرسال الفاشل تلقائيًا."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_tax__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_import_wizard_form
+msgid "Import"
+msgstr "استيراد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_import_wizard
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_import
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_import_wizard_form
+msgid "Import Vendor E-Invoices"
+msgstr "استيراد الفواتير الإلكترونية للمورّدين"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_import_wizard
+msgid "Import Vendor E-Invoices (PINT-AE)"
+msgstr "استيراد الفواتير الإلكترونية للمورّدين (PINT-AE)"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Import vendor e-invoices"
+msgstr "استيراد فواتير المورّدين الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Imported from the PINT-AE e-invoice %s."
+msgstr "تم الاستيراد من الفاتورة الإلكترونية PINT-AE رقم %s."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__10
+msgid "In cash"
+msgstr "نقدًا"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__1
+msgid "Instrument not defined"
+msgstr "وسيلة غير محددة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_period_start
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_period_start
+msgid "Invoicing Period From"
+msgstr "فترة الفوترة من"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_period_end
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_period_end
+msgid "Invoicing Period To"
+msgstr "فترة الفوترة إلى"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_legal_authority
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_legal_authority
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_legal_authority
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_legal_authority
+msgid "Issuing Authority"
+msgstr "الجهة المُصدِرة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move.py:0
+msgid "Item"
+msgstr "البند"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__json_id_key
+msgid "JSON: document id"
+msgstr "JSON: معرّف المستند"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__json_message_key
+msgid "JSON: message"
+msgstr "JSON: الرسالة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__json_registered_key
+msgid "JSON: registered flag"
+msgstr "JSON: مؤشر التسجيل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__json_status_key
+msgid "JSON: status"
+msgstr "JSON: الحالة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__api_key
+msgid "Kept in the database only; never written in the logs or the chatter."
+msgstr "يُحفظ في قاعدة البيانات فقط؛ ولا يُكتب أبدًا في السجلات أو المحادثات."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_last_attempt
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_last_attempt
+msgid "Last Attempt"
+msgstr "آخر محاولة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_message
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_message
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Last Message"
+msgstr "آخر رسالة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Last Test"
+msgstr "آخر اختبار"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__last_test_date
+msgid "Last Test Date"
+msgstr "تاريخ آخر اختبار"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__last_test_message
+msgid "Last Test Message"
+msgstr "رسالة آخر اختبار"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_list
+msgid "Last Test OK"
+msgstr "نجاح آخر اختبار"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__last_test_ok
+msgid "Last Test Ok"
+msgstr "نجاح آخر اختبار"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__write_uid
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__write_date
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "Legal Registration"
+msgstr "التسجيل القانوني"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_legal_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_legal_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_legal_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_legal_id
+msgid "Legal Registration Number"
+msgstr "رقم التسجيل القانوني"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_legal_id_type
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_legal_id_type
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_legal_id_type
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_legal_id_type
+msgid "Legal Registration Type"
+msgstr "نوع التسجيل القانوني"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__level
+msgid "Level"
+msgstr "المستوى"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__line_ids
+msgid "Line"
+msgstr "السطر"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_exemption_code__dl8_46_4
+msgid "Local passenger transport"
+msgstr "النقل المحلي للركاب"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__lookup_path
+msgid "Lookup Path"
+msgstr "مسار البحث"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Mandate"
+msgstr "الإلزام"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__mandate_passed
+msgid "Mandate Passed"
+msgstr "بدأ الإلزام"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_mandate_phase
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_mandate_phase
+msgid "Mandate Phase"
+msgstr "مرحلة الإلزام"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Mandate countdown · العدّ التنازلي"
+msgstr "العدّ التنازلي للإلزام"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__message
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_applicable
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_applicable
+msgid "Mirak Ae Applicable"
+msgstr "خاضعة للفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_days_left
+msgid "Mirak Ae Days Left"
+msgstr "الأيام المتبقية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_error_count
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_error_count
+msgid "Mirak Ae Error Count"
+msgstr "عدد الأخطاء"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_issue_count
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_issue_count
+msgid "Mirak Ae Issue Count"
+msgstr "عدد المشكلات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_issues_html
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_issues_html
+msgid "Mirak Ae Issues Html"
+msgstr "جدول المشكلات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__mock_behaviour
+msgid "Mock Behaviour"
+msgstr "سلوك المحاكاة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__mth
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Not a Peppol PINT document (CustomizationID \"%s\")."
+msgstr "ليس مستند Peppol PINT (CustomizationID \"%s\")."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Not a UBL invoice or credit note."
+msgstr "ليس فاتورة أو إشعارًا دائنًا بصيغة UBL."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Not a valid XML file (%s)."
+msgstr "ليس ملف XML صالحًا (%s)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_peppol_status__unknown
+msgid "Not checked"
+msgstr "لم يتم التحقق"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness__level__low
+msgid "Not ready"
+msgstr "غير جاهزة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_peppol_status__not_registered
+msgid "Not registered"
+msgstr "غير مسجّل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__draft
+msgid "Not sent"
+msgstr "غير مُرسلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_scope__none
+msgid "Not subject to e-invoicing"
+msgstr "غير خاضع للفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_category__o
+msgid "O - Outside the scope of VAT"
+msgstr "O - خارج نطاق ضريبة القيمة المضافة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__ok
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__ok
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "OK"
+msgstr "سليم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__ok_count
+msgid "Ok Count"
+msgstr "عدد السليم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_payment_means__68
+msgid "Online payment service"
+msgstr "خدمة دفع إلكتروني"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_tax__mirak_ae_exemption_code
+msgid "Only for exempt (E) supplies."
+msgstr "للتوريدات المعفاة (E) فقط."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Open the Readiness Checker"
+msgstr "فتح أداة فحص الجاهزية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__operation
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_log_search
+msgid "Operation"
+msgstr "العملية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move.py:0
+msgid "Other billing frequency"
+msgstr "دورية فوترة أخرى"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__oth
+msgid "Others"
+msgstr "أخرى"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_xml_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_xml_id
+msgid "PINT-AE XML"
+msgstr "ملف XML بصيغة PINT-AE"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_account_tax__mirak_ae_category
+msgid ""
+"PINT-AE tax category code put on every invoice line using this tax. Filled "
+"automatically; change it if needed."
+msgstr "رمز فئة الضريبة PINT-AE الذي يوضع على كل سطر فاتورة يستخدم هذه الضريبة. يُملأ تلقائيًا؛ ويمكنك تغييره عند الحاجة."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_legal_id_type__pas
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_legal_id_type__pas
+msgid "Passport"
+msgstr "جواز السفر"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_payment_means
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_payment_means
+msgid "Payment Means"
+msgstr "وسيلة الدفع"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Peppol PINT-AE 1.0.4 ·"
+msgstr "Peppol PINT-AE 1.0.4 ·"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_endpoint_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_endpoint_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_endpoint_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_endpoint_id
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Peppol Participant ID"
+msgstr "معرّف المشارك في Peppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_endpoint_scheme
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_endpoint_scheme
+msgid "Peppol Scheme"
+msgstr "مخطط Peppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_peppol_status
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_peppol_status
+msgid "Peppol Status"
+msgstr "الحالة في Peppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_mandate_phase__phase_1
+msgid "Phase 1: revenue of AED 50 million or more (January 2027)"
+msgstr "المرحلة 1: إيرادات 50 مليون درهم أو أكثر (يناير 2027)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_mandate_phase__phase_2
+msgid "Phase 2: every other VAT-registered business (July 2027)"
+msgstr "المرحلة 2: باقي الأعمال المسجّلة في ضريبة القيمة المضافة (يوليو 2027)"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid ""
+"Phased implementation of Ministerial Decision No. 244 of 2025. Check your "
+"exact date with the FTA."
+msgstr "التطبيق المرحلي للقرار الوزاري رقم 244 لسنة 2025. تحقّق من تاريخك الدقيق لدى الهيئة الاتحادية للضرائب."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__send_path
+msgid "Placeholders: {number}, {uuid}, {type}, {sender}, {receiver}."
+msgstr "المتغيرات: {number} و{uuid} و{type} و{sender} و{receiver}."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move.py:0
+msgid "Post %s before generating its e-invoice."
+msgstr "رحّل %s قبل إنشاء فاتورته الإلكترونية."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "Post %s before sending its e-invoice."
+msgstr "رحّل %s قبل إرسال فاتورته الإلكترونية."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__operation__validate
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Pre-validation"
+msgstr "التحقق المسبق"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_issues
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_issues
+msgid "Pre-validation Issues"
+msgstr "مشكلات التحقق المسبق"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_principal_trn
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_principal_trn
+msgid "Principal TRN"
+msgstr "رقم التسجيل الضريبي للموكّل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__problem_ids
+msgid "Problem"
+msgstr "مشكلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__environment__production
+msgid "Production"
+msgstr "الإنتاج"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__products
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_margin_scheme
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_margin_scheme
+msgid "Profit Margin Scheme"
+msgstr "نظام هامش الربح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__provider_id
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Provider"
+msgstr "المزوّد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_reference
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_reference
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__reference
+msgid "Provider Reference"
+msgstr "مرجع المزوّد"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/send_wizard.py:0
+msgid "Provider error (retried automatically): %s"
+msgstr "خطأ لدى المزوّد (ستُعاد المحاولة تلقائيًا): %s"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__journal_id
+msgid "Purchase Journal"
+msgstr "دفتر المشتريات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_goods_type__dl8_48_3_3
+msgid "Pure hydrocarbons"
+msgstr "الهيدروكربونات النقية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_mirak_ae_provider__auth_prefix
+msgid "Put before the key in the header (e.g. \"Bearer \")."
+msgstr "يوضع قبل المفتاح في الترويسة (مثل \"Bearer \")."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__qtr
+msgid "Quarterly"
+msgstr "ربع سنوي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__rak
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__rak
+msgid "Ras Al Khaimah"
+msgstr "رأس الخيمة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__score
+msgid "Readiness"
+msgstr "الجاهزية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_readiness
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_readiness
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "Readiness Checker"
+msgstr "فحص الجاهزية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Readiness · الجاهزية"
+msgstr "الجاهزية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__ready
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness__level__high
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "Ready"
+msgstr "جاهزة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_peppol_status__registered
+msgid "Registered on Peppol"
+msgstr "مسجّل في Peppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__mock_behaviour__reject
+msgid "Reject every document"
+msgstr "رفض كل المستندات"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__rejected
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__rejected
+msgid "Rejected"
+msgstr "مرفوضة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+msgid "Rejected or Failed E-Invoices"
+msgstr "الفواتير الإلكترونية المرفوضة أو الفاشلة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Rejected or failed e-invoices · الفواتير المرفوضة"
+msgstr "الفواتير الإلكترونية المرفوضة أو الفاشلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__request
+msgid "Request (redacted)"
+msgstr "الطلب (بعد حجب البيانات السرية)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__response
+msgid "Response"
+msgstr "الرد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__result
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_log__result
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__result
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_log_search
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_product__mirak_ae_goods_type
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__mirak_ae_goods_type
+msgid "Reverse Charge Goods Type"
+msgstr "نوع السلع في الاحتساب العكسي"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "Rule"
+msgstr "القاعدة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_category__s
+msgid "S - Standard rate (5%)"
+msgstr "S - النسبة الأساسية (5%)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_provider__environment__sandbox
+msgid "Sandbox (tests)"
+msgstr "بيئة الاختبار"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid ""
+"Scheme 0235 + your TIN. Confirm it with your service provider at onboarding."
+msgstr "المخطط 0235 + رقمك الضريبي TIN. أكّده مع مزوّد الخدمة عند التسجيل."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__score
+msgid "Score"
+msgstr "النتيجة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__section
+msgid "Section"
+msgstr "القسم"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__operation__send
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid "Send"
+msgstr "إرسال"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Send E-Invoice"
+msgstr "إرسال الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/readiness_wizard.py:0
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_send_wizard
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid "Send E-Invoices"
+msgstr "إرسال الفواتير الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__send_path
+msgid "Send Path"
+msgstr "مسار الإرسال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_send_wizard
+msgid "Send UAE E-Invoices"
+msgstr "إرسال الفواتير الإلكترونية الإماراتية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_auto_send
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_auto_send
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Send When Posted"
+msgstr "الإرسال عند الترحيل"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Send pending e-invoices"
+msgstr "إرسال الفواتير الإلكترونية المعلّقة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_attempts
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_attempts
+msgid "Sending Attempts"
+msgstr "محاولات الإرسال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_state__sent
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__sent
+msgid "Sent"
+msgstr "مُرسلة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/send_wizard.py:0
+msgid "Sent: %s"
+msgstr "المُرسلة: %s"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_product__mirak_ae_sac_code
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_product_template__mirak_ae_sac_code
+msgid "Service Accounting Code"
+msgstr "رمز محاسبة الخدمة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__provider
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Service Provider"
+msgstr "مزوّد الخدمة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__provider_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_provider_id
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_provider_id
+msgid "Service Provider (ASP)"
+msgstr "مزوّد الخدمة (ASP)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_provider
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_providers
+msgid "Service Providers (ASP)"
+msgstr "مزوّدو الخدمة (ASP)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_item_type__s
+msgid "Services"
+msgstr "خدمات"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Set the date"
+msgstr "تحديد التاريخ"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Set the date from which e-invoicing is mandatory for you."
+msgstr "حدّد التاريخ الذي تصبح فيه الفوترة الإلكترونية إلزامية لك."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_partner.py:0
+msgid "Set your service provider in Settings > UAE E-Invoicing first."
+msgstr "حدّد مزوّد الخدمة أولًا من الإعدادات > الفوترة الإلكترونية الإماراتية."
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_settings
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_settings
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: mirak_uae_einvoice
+#: model:res.groups,comment:mirak_uae_einvoice.group_mirak_ae_manager
+msgid "Settings, service provider and API key."
+msgstr "الإعدادات ومزوّد الخدمة ومفتاح API."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__shj
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__shj
+msgid "Sharjah"
+msgstr "الشارقة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "Simulation"
+msgstr "المحاكاة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__skipped_count
+msgid "Skipped Count"
+msgstr "عدد المتجاوزة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__status_path
+msgid "Status Path"
+msgstr "مسار الحالة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__operation__status
+msgid "Status check"
+msgstr "التحقق من الحالة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_summary_invoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_summary_invoice
+msgid "Summary Invoice"
+msgstr "فاتورة موجزة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_exemption_code__dl8_46_2
+msgid "Supply of residential units (lease or sale)"
+msgstr "توريد الوحدات السكنية (إيجار أو بيع)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_bank_statement_line__mirak_ae_tt_ecommerce
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_move__mirak_ae_tt_ecommerce
+msgid "Supply through E-Commerce"
+msgstr "توريد عبر التجارة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__supports_lookup
+msgid "Supports Lookup"
+msgstr "يدعم البحث"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_tin
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_tin
+msgid "TIN"
+msgstr "الرقم الضريبي TIN"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "TIN:"
+msgstr "الرقم الضريبي TIN:"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_company__mirak_ae_trn
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_config_settings__mirak_ae_trn
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_partner__mirak_ae_trn
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_res_users__mirak_ae_trn
+msgid "TRN"
+msgstr "رقم التسجيل الضريبي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_account_tax
+msgid "Tax"
+msgstr "الضريبة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.act_window,name:mirak_uae_einvoice.action_mirak_ae_taxes
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_taxes
+msgid "Tax Categories"
+msgstr "فئات الضرائب"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_tin
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_tin
+msgid "Tax Identification Number: the first 10 digits of the TRN."
+msgstr "رقم التعريف الضريبي: أول 10 أرقام من رقم التسجيل الضريبي."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Tax Registration Number (TRN)"
+msgstr "رقم التسجيل الضريبي (TRN)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_partner__mirak_ae_trn
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_users__mirak_ae_trn
+msgid "Tax Registration Number of the customer or vendor (15 digits)."
+msgstr "رقم التسجيل الضريبي للعميل أو المورّد (15 رقمًا)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_trn
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_trn
+msgid ""
+"Tax Registration Number: 15 digits issued by the FTA. Taken from the Tax ID."
+msgstr "رقم التسجيل الضريبي: 15 رقمًا صادرة عن الهيئة الاتحادية للضرائب. يؤخذ من الرقم الضريبي."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+msgid "Tax and Peppol"
+msgstr "الضريبة وPeppol"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__dl8_61_1_e
+msgid "Tax charged or tax treatment applied in error"
+msgstr "احتساب الضريبة أو تطبيق المعاملة الضريبية عن طريق الخطأ"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_readiness_line__section__taxes
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__test_path
+msgid "Test Path"
+msgstr "مسار الاختبار"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid ""
+"The ASP that delivers your e-invoices on Peppol and reports them to the FTA."
+msgstr "مزوّد الخدمة المعتمد الذي يسلّم فواتيرك الإلكترونية عبر Peppol ويبلّغ عنها الهيئة الاتحادية للضرائب."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_company.py:0
+msgid ""
+"The Peppol participant ID of %s must be the 10-digit TIN (scheme 0235)."
+msgstr "يجب أن يكون معرّف المشارك في Peppol لـ %s هو الرقم الضريبي TIN المكوّن من 10 أرقام (المخطط 0235)."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_company.py:0
+msgid ""
+"The TRN of %(company)s must have 15 digits, start with 1 and end with 03 "
+"(now: \"%(trn)s\")."
+msgstr "يجب أن يتكوّن رقم التسجيل الضريبي لـ %(company)s من 15 رقمًا يبدأ بـ 1 وينتهي بـ 03 (حاليًا: \"%(trn)s\")."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_partner.py:0
+msgid ""
+"The TRN of %(partner)s must have 15 digits, start with 1 and end with 03 "
+"(now: \"%(trn)s\")."
+msgstr "يجب أن يتكوّن رقم التسجيل الضريبي لـ %(partner)s من 15 رقمًا يبدأ بـ 1 وينتهي بـ 03 (حاليًا: \"%(trn)s\")."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__dl8_61_1_c
+msgid "The agreed consideration was altered (e.g. bad debt relief)"
+msgstr "تعديل المقابل المتفق عليه (مثل تخفيف الديون المعدومة)"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "The document can be corrected and sent again."
+msgstr "يمكن تصحيح المستند وإرساله مرة أخرى."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "The document has no line."
+msgstr "المستند لا يحتوي على أي سطر."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "The document has no supplier."
+msgstr "المستند لا يحتوي على مورّد."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid ""
+"The e-invoice cannot be sent:\n"
+"\n"
+"%s"
+msgstr ""
+"لا يمكن إرسال الفاتورة الإلكترونية:\n"
+"\n"
+"%s"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "The e-invoice is valid and ready to send."
+msgstr "الفاتورة الإلكترونية صالحة وجاهزة للإرسال."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move.py:0
+msgid ""
+"The generated XML does not match the UBL 2.1 schema:\n"
+"%s"
+msgstr ""
+"ملف XML المُنشأ لا يطابق مخطط UBL 2.1:\n"
+"%s"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_partner.py:0
+msgid "The lookup failed: %s"
+msgstr "فشل البحث: %s"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__dl8_61_1_a
+msgid "The supply was cancelled"
+msgstr "إلغاء التوريد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__dl8_61_1_b
+msgid "The tax treatment changed because the nature of the supply changed"
+msgstr "تغيّر المعاملة الضريبية بسبب تغيّر طبيعة التوريد"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_provider__timeout
+msgid "Timeout"
+msgstr "المهلة"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__count
+msgid "To Fix"
+msgstr "للإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_send_wizard__to_send_count
+msgid "To Send Count"
+msgstr "عدد ما يجب إرساله"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_dashboard__todo_count
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness__todo_count
+msgid "Todo Count"
+msgstr "عدد المهام"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid ""
+"Total in the e-invoice: %(file)s, total of the bill: %(bill)s. Check the "
+"taxes."
+msgstr "الإجمالي في الفاتورة الإلكترونية: %(file)s، وإجمالي فاتورة المورّد: %(bill)s. تحقّق من الضرائب."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "Trade licence (or other registration) shown in every e-invoice."
+msgstr "الرخصة التجارية (أو تسجيل آخر) التي تظهر في كل فاتورة إلكترونية."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_legal_id
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_legal_id
+msgid "Trade licence number (or Emirates ID / passport / cabinet decision)."
+msgstr "رقم الرخصة التجارية (أو الهوية الإماراتية / جواز السفر / قرار مجلس الوزراء)."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "Transaction Type"
+msgstr "نوع المعاملة"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid "UAE E-Invoice"
+msgstr "الفاتورة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+#: model:ir.ui.menu,name:mirak_uae_einvoice.menu_mirak_ae_root
+#: model:res.groups.privilege,name:mirak_uae_einvoice.privilege_mirak_ae
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.product_template_form_view
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_partner_form_mirak_ae
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "UAE E-Invoicing"
+msgstr "الفوترة الإلكترونية الإماراتية"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid ""
+"UAE E-Invoicing <small class=\"text-muted fs-5\">الفوترة الإلكترونية</small>"
+msgstr "الفوترة الإلكترونية <small class=\"text-muted fs-5\">UAE E-Invoicing</small>"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.server,name:mirak_uae_einvoice.action_mirak_ae_dashboard_open
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_dashboard
+msgid "UAE E-Invoicing Dashboard"
+msgstr "لوحة معلومات الفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_log
+msgid "UAE E-Invoicing Exchange Log"
+msgstr "سجل تبادل الفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_readiness_line
+msgid "UAE E-Invoicing Readiness Check"
+msgstr "فحص جاهزية الفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_readiness
+msgid "UAE E-Invoicing Readiness Checker"
+msgstr "أداة فحص جاهزية الفوترة الإلكترونية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model,name:mirak_uae_einvoice.model_mirak_ae_provider
+msgid "UAE E-Invoicing Service Provider (ASP)"
+msgstr "مزوّد خدمة الفوترة الإلكترونية (ASP)"
+
+#. module: mirak_uae_einvoice
+#: model:ir.actions.server,name:mirak_uae_einvoice.ir_cron_mirak_ae_process_ir_actions_server
+msgid "UAE E-Invoicing: send, retry and follow e-invoices"
+msgstr "الفوترة الإلكترونية: إرسال الفواتير الإلكترونية وإعادة المحاولة ومتابعتها"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_account_tax__mirak_ae_category
+msgid "UAE Tax Category"
+msgstr "فئة الضريبة الإماراتية"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_company__mirak_ae_emirate__uaq
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__res_partner__mirak_ae_emirate__uaq
+msgid "Umm Al Quwain"
+msgstr "أم القيوين"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__mirak_ae_log__result__unknown
+msgid "Unknown"
+msgstr "غير معروف"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/einvoice_provider.py:0
+msgid "Unknown connector \"%s\"."
+msgstr "موصل غير معروف \"%s\"."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Unknown currency %s."
+msgstr "عملة غير معروفة %s."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/wizard/import_wizard.py:0
+msgid "Unknown supplier %(name)s (TRN %(trn)s)."
+msgstr "مورّد غير معروف %(name)s (رقم التسجيل الضريبي %(trn)s)."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__product_template__mirak_ae_goods_type__dl8_48_3_2
+msgid "Unprocessed or processed natural gas"
+msgstr "الغاز الطبيعي الخام أو المعالج"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_import_wizard_form
+msgid ""
+"Upload the PINT-AE XML files received from your suppliers. The\n"
+"                    supplier is found from its TRN (or Peppol ID, or name), products from their code, barcode or name,\n"
+"                    taxes from the PINT-AE tax category."
+msgstr ""
+"حمّل ملفات XML بصيغة PINT-AE المستلمة من مورّديك. يتم\n"
+"                    التعرّف على المورّد من رقم التسجيل الضريبي (أو معرّف Peppol أو الاسم)، وعلى المنتجات من الرمز أو الباركود أو الاسم،\n"
+"                    وعلى الضرائب من فئة الضريبة PINT-AE."
+
+#. module: mirak_uae_einvoice
+#: model:res.groups,name:mirak_uae_einvoice.group_mirak_ae_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid ""
+"Validate and send customer invoices and credit notes as soon as they are "
+"posted."
+msgstr "التحقق من فواتير العملاء والإشعارات الدائنة وإرسالها فور ترحيلها."
+
+#. module: mirak_uae_einvoice
+#: model:res.groups,comment:mirak_uae_einvoice.group_mirak_ae_user
+msgid "Validate and send e-invoices, follow their status."
+msgstr "التحقق من الفواتير الإلكترونية وإرسالها ومتابعة حالتها."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_credit_reason__vd
+msgid "Volume discount"
+msgstr "خصم الكمية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/account_move_edi.py:0
+msgid "Warning"
+msgstr "تنبيه"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__wky
+msgid "Weekly"
+msgstr "أسبوعي"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__weight
+msgid "Weight"
+msgstr "الوزن"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__wizard_id
+msgid "Wizard"
+msgstr "المعالج"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_import_wizard__attachment_ids
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_import_wizard_form
+msgid "XML Files"
+msgstr "ملفات XML"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_move__mirak_ae_billing_frequency__yrl
+msgid "Yearly"
+msgstr "سنوي"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/models/res_partner.py:0
+msgid "Your service provider does not offer a participant lookup."
+msgstr "مزوّد الخدمة لا يوفّر البحث عن المشاركين."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields.selection,name:mirak_uae_einvoice.selection__account_tax__mirak_ae_category__z
+msgid "Z - Zero rated"
+msgstr "Z - خاضع لنسبة الصفر"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.res_config_settings_view_form
+msgid "days left"
+msgstr "يومًا متبقيًا"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "days left · يومًا متبقيًا"
+msgstr "يومًا متبقيًا"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid ""
+"document(s) skipped: not posted, not\n"
+"                        concerned or already sent."
+msgstr ""
+"مستند/مستندات تم تجاوزها: غير مُرحّلة، أو غير\n"
+"                        معنية، أو أُرسلت مسبقًا."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_send_wizard_form
+msgid ""
+"document(s) will be\n"
+"                        validated and sent to your service provider."
+msgstr ""
+"مستند/مستندات سيتم\n"
+"                        التحقق منها وإرسالها إلى مزوّد الخدمة."
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_company__mirak_ae_legal_authority
+#: model:ir.model.fields,help:mirak_uae_einvoice.field_res_config_settings__mirak_ae_legal_authority
+msgid ""
+"e.g. \"Dubai Department of Economy and Tourism\". Required with a trade "
+"licence (rule ibr-101-ae)."
+msgstr "مثل \"دائرة الاقتصاد والسياحة في دبي\". مطلوبة مع الرخصة التجارية (القاعدة ibr-101-ae)."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "e.g. My Accredited Service Provider"
+msgstr "مثل: مزوّد الخدمة المعتمد لديّ"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.mirak_ae_provider_form
+msgid "https://api.provider.ae/v1"
+msgstr "https://api.provider.ae/v1"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_dashboard_form
+msgid "point(s) to fix"
+msgstr "نقطة/نقاط للإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid ""
+"problem(s) block the e-invoice:\n"
+"                        see the <b>UAE E-Invoice</b> tab."
+msgstr ""
+"مشكلة/مشكلات تمنع الفاتورة الإلكترونية:\n"
+"                        راجع تبويب <b>الفاتورة الإلكترونية</b>."
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_mirak_ae_readiness_form
+msgid "to fix"
+msgstr "للإصلاح"
+
+#. module: mirak_uae_einvoice
+#: model:ir.model.fields,field_description:mirak_uae_einvoice.field_mirak_ae_readiness_line__name_ar
+msgid "التحقّق"
+msgstr "التحقّق"
+
+#. module: mirak_uae_einvoice
+#: model_terms:ir.ui.view,arch_db:mirak_uae_einvoice.view_move_form
+msgid ""
+"توجد مشكلات تمنع إرسال الفاتورة الإلكترونية: راجع تبويب الفوترة الإلكترونية."
+msgstr "توجد مشكلات تمنع إرسال الفاتورة الإلكترونية: راجع تبويب الفوترة الإلكترونية."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "Trial version"
+msgstr "نسخة تجريبية"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "E-invoices sent"
+msgstr "الفواتير الإلكترونية المرسلة"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "remaining"
+msgstr "المتبقي"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid ""
+"To send without limit and connect your real service provider (ASP), buy the "
+"full version:"
+msgstr "للإرسال دون حدود وربط مزوّد الخدمة الحقيقي (ASP)، اشترِ النسخة الكاملة:"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "chat with us on WhatsApp"
+msgstr "راسلنا على واتساب"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "WhatsApp +%s"
+msgstr "واتساب +%s"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid ""
+"The trial version allows %(max)s e-invoices: the limit is reached."
+msgstr "تسمح النسخة التجريبية بإرسال %(max)s فاتورة إلكترونية: تم بلوغ الحد الأقصى."
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/tools/trial.py:0
+msgid "Scan the QR code or click to buy the full version:"
+msgstr "امسح رمز QR بالهاتف أو اضغط على الرابط لشراء النسخة الكاملة:"
+
+#. module: mirak_uae_einvoice
+#. odoo-python
+#: code:addons/mirak_uae_einvoice/connectors/rest.py:0
+msgid ""
+"Connecting a real Accredited Service Provider (REST) is available in the "
+"full version only. This trial works with the simulation provider: "
+"%(used)s/%(max)s documents used. WhatsApp %(phone)s or scan the QR code in "
+"the dashboard to buy the full version."
+msgstr ""
+"ربط مزوّد خدمة معتمد حقيقي (REST) متوفر في النسخة الكاملة فقط. تعمل هذه "
+"النسخة التجريبية مع مزوّد المحاكاة: %(used)s/%(max)s مستند مستخدم. راسلنا "
+"على واتساب %(phone)s أو امسح رمز QR في لوحة المعلومات لشراء النسخة الكاملة."

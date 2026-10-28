@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <menuitem id="menu_snoonu_root" name="Snoonu"
+              web_icon="mirak_snoonu_connector_trial,static/description/icon.png"
+              groups="mirak_snoonu_connector_trial.group_snoonu_user" sequence="81" action="snoonu_account_action"/>
+
+    <menuitem id="menu_snoonu_accounts" name="Accounts" parent="menu_snoonu_root"
+              action="snoonu_account_action" sequence="10"/>
+    <menuitem id="menu_snoonu_products" name="Products" parent="menu_snoonu_root"
+              action="snoonu_product_action" sequence="20"/>
+    <menuitem id="menu_snoonu_logs" name="Logs" parent="menu_snoonu_root"
+              action="snoonu_log_action" sequence="30"/>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record model="res.groups.privilege" id="res_groups_privilege_snoonu">
+        <field name="name">Snoonu</field>
+        <field name="sequence">40</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+    </record>
+
+    <record id="group_snoonu_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_snoonu"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Sees Snoonu products and logs, adds products, sends updates.</field>
+    </record>
+
+    <record id="group_snoonu_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_snoonu"/>
+        <field name="implied_ids" eval="[(4, ref('group_snoonu_user'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">Also configures accounts, credentials and branches.</field>
+    </record>
+
+    <record id="snoonu_account_company_rule" model="ir.rule">
+        <field name="name">Snoonu account: multi-company</field>
+        <field name="model_id" ref="model_snoonu_account"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="snoonu_branch_company_rule" model="ir.rule">
+        <field name="name">Snoonu branch: multi-company</field>
+        <field name="model_id" ref="model_snoonu_branch"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="snoonu_product_company_rule" model="ir.rule">
+        <field name="name">Snoonu product: multi-company</field>
+        <field name="model_id" ref="model_snoonu_product"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="snoonu_log_company_rule" model="ir.rule">
+        <field name="name">Snoonu log: multi-company</field>
+        <field name="model_id" ref="model_snoonu_log"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

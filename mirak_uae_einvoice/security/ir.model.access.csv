@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mirak_ae_provider_user,mirak.ae.provider user,model_mirak_ae_provider,group_mirak_ae_user,1,0,0,0
+access_mirak_ae_provider_manager,mirak.ae.provider manager,model_mirak_ae_provider,group_mirak_ae_manager,1,1,1,1
+access_mirak_ae_log_user,mirak.ae.log user,model_mirak_ae_log,group_mirak_ae_user,1,0,0,0
+access_mirak_ae_log_manager,mirak.ae.log manager,model_mirak_ae_log,group_mirak_ae_manager,1,1,1,1
+access_mirak_ae_send_wizard_user,mirak.ae.send.wizard user,model_mirak_ae_send_wizard,group_mirak_ae_user,1,1,1,1
+access_mirak_ae_import_wizard_user,mirak.ae.import.wizard user,model_mirak_ae_import_wizard,group_mirak_ae_user,1,1,1,1
+access_mirak_ae_readiness_user,mirak.ae.readiness user,model_mirak_ae_readiness,group_mirak_ae_user,1,1,1,1
+access_mirak_ae_readiness_line_user,mirak.ae.readiness.line user,model_mirak_ae_readiness_line,group_mirak_ae_user,1,1,1,1
+access_mirak_ae_dashboard_user,mirak.ae.dashboard user,model_mirak_ae_dashboard,group_mirak_ae_user,1,1,1,1
