@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="view_mirak_ae_send_wizard_form" model="ir.ui.view">
+        <field name="name">mirak.ae.send.wizard.form</field>
+        <field name="model">mirak.ae.send.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Send E-Invoices">
+                <field name="done" invisible="1"/>
+                <div invisible="done">
+                    <p class="fs-5"><field name="to_send_count" class="d-inline fw-bold"/> document(s) will be
+                        validated and sent to your service provider.</p>
+                    <p class="text-muted" invisible="not skipped_count">
+                        <field name="skipped_count" class="d-inline"/> document(s) skipped: not posted, not
+                        concerned or already sent.</p>
+                    <p class="text-muted">Documents with problems are not sent: they stay "Not sent" with the list of
+                        corrections in their E-Invoice tab.</p>
+                </div>
+                <div invisible="not done">
+                    <field name="result" nolabel="1"/>
+                </div>
+                <footer>
+                    <button name="action_send" type="object" string="Send" class="btn-primary"
+                            invisible="done or not to_send_count"/>
+                    <button special="cancel" string="Close" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_send_wizard" model="ir.actions.act_window">
+        <field name="name">Send E-Invoices</field>
+        <field name="res_model">mirak.ae.send.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_view_types">list</field>
+        <field name="group_ids" eval="[(4, ref('mirak_uae_einvoice.group_mirak_ae_user'))]"/>
+    </record>
+</odoo>

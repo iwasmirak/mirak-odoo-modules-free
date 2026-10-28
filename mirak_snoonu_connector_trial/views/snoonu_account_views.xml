@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="snoonu_account_view_form" model="ir.ui.view">
+        <field name="name">snoonu.account.form</field>
+        <field name="model">snoonu.account</field>
+        <field name="arch" type="xml">
+            <form string="Snoonu Account">
+                <header>
+                    <button name="action_sync_changes" type="object" string="Send Changes" class="btn-primary"
+                            help="Send the products whose price, discount, stock or visibility changed."/>
+                    <button name="action_sync_all" type="object" string="Send All"
+                            confirm="Send every product to Snoonu now?"/>
+                    <button name="action_add_products" type="object" string="Add Products"/>
+                    <button name="action_preview_payload" type="object" string="Preview Data"
+                            help="Show the JSON that would be sent, without sending it."/>
+                    <button name="action_send_test" type="object" string="Send Test Product"
+                            groups="mirak_snoonu_connector_trial.group_snoonu_manager"
+                            help="Send only the first product: the quickest staging check."/>
+                    <field name="environment" widget="statusbar" options="{'clickable': '1'}"
+                           groups="mirak_snoonu_connector_trial.group_snoonu_manager"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_products" type="object" class="oe_stat_button" icon="fa-cubes">
+                            <field name="product_count" widget="statinfo" string="Products"/>
+                        </button>
+                        <button name="action_open_products" type="object" class="oe_stat_button" icon="fa-check">
+                            <field name="synced_count" widget="statinfo" string="Synced"/>
+                        </button>
+                        <button name="action_open_products" type="object" class="oe_stat_button" icon="fa-clock-o">
+                            <field name="pending_count" widget="statinfo" string="To Send"/>
+                        </button>
+                        <button name="action_open_errors" type="object" class="oe_stat_button text-danger"
+                                icon="fa-exclamation-triangle" invisible="not error_count">
+                            <field name="error_count" widget="statinfo" string="Errors"/>
+                        </button>
+                        <button name="action_open_logs" type="object" class="oe_stat_button" icon="fa-list-alt">
+                            <field name="log_count" widget="statinfo" string="Logs"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Production" bg_color="text-bg-success"
+                            invisible="environment != 'production'"/>
+                    <widget name="web_ribbon" title="Staging" bg_color="text-bg-warning"
+                            invisible="environment != 'staging'"/>
+                    <field name="environment" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Zevon on Snoonu"/></h1>
+                    </div>
+                    <group>
+                        <group string="Connection" groups="mirak_snoonu_connector_trial.group_snoonu_manager">
+                            <field name="business_unit_id"/>
+                            <field name="api_email" widget="email"/>
+                            <field name="api_key" password="True"/>
+                            <field name="staging_url" invisible="environment != 'staging'"/>
+                            <field name="production_url" invisible="environment != 'production'"
+                                   required="environment == 'production'"/>
+                            <field name="endpoint_url" widget="CopyClipboardChar"/>
+                        </group>
+                        <group string="Synchronization">
+                            <field name="auto_sync" widget="boolean_toggle"/>
+                            <field name="sync_interval" invisible="not auto_sync"/>
+                            <field name="last_sync_at"/>
+                            <field name="batch_size" groups="mirak_snoonu_connector_trial.group_snoonu_manager"/>
+                            <field name="timeout" groups="mirak_snoonu_connector_trial.group_snoonu_manager"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group string="Prices">
+                            <field name="send_brand_price"/>
+                            <field name="pricelist_id"/>
+                            <field name="discount_mode" invisible="not pricelist_id"/>
+                        </group>
+                        <group string="Stock">
+                            <field name="stock_field"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Branches" name="branches">
+                            <field name="branch_ids" context="{'default_account_id': id}">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="branch_ref"/>
+                                    <field name="warehouse_id"/>
+                                    <field name="use_defaults" widget="boolean_toggle"/>
+                                    <field name="pricelist_id" readonly="use_defaults" optional="show"/>
+                                    <field name="stock_buffer" optional="show"/>
+                                    <field name="active" widget="boolean_toggle" optional="hide"/>
+                                    <field name="company_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                            <div class="text-muted small">
+                                <b>Use Brand Price</b> on: the branch shows the brand price and discount
+                                (UseDefaults = true). Off: it sends the price of its own pricelist.
+                                The stock always comes from the branch warehouse.
+                            </div>
+                        </page>
+                        <page string="Help" name="help">
+                            <ol>
+                                <li>Enter the <b>Business Unit ID</b>, <b>Registered Email</b> and <b>API Key</b>
+                                    given by your Snoonu account manager (staging first).</li>
+                                <li>Add the <b>branches</b> with their Snoonu Branch ID and the Odoo warehouse
+                                    that supplies them.</li>
+                                <li><b>Add Products</b>: the SKU must be the one Snoonu knows
+                                    (Internal Reference by default).</li>
+                                <li><b>Preview Data</b>, then <b>Send Test Product</b> and check it in Snoonu.</li>
+                                <li>When Snoonu validates, switch to <b>Production</b> with the production URL,
+                                    then turn on <b>Automatic Sync</b>.</li>
+                            </ol>
+                            <p class="text-muted">Only products whose price, discount, stock or visibility changed
+                                are sent. Snoonu discounts are amounts, not percentages.</p>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="snoonu_account_view_list" model="ir.ui.view">
+        <field name="name">snoonu.account.list</field>
+        <field name="model">snoonu.account</field>
+        <field name="arch" type="xml">
+            <list string="Snoonu Accounts">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="business_unit_id"/>
+                <field name="environment" widget="badge"
+                       decoration-success="environment == 'production'" decoration-warning="environment == 'staging'"/>
+                <field name="product_count" string="Products"/>
+                <field name="error_count" string="Errors" decoration-danger="error_count > 0"/>
+                <field name="auto_sync" widget="boolean_toggle" readonly="1"/>
+                <field name="last_sync_at"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="snoonu_account_action" model="ir.actions.act_window">
+        <field name="name">Snoonu Accounts</field>
+        <field name="res_model">snoonu.account</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Connect your Snoonu brand</p>
+            <p>Enter the credentials given by Snoonu, link your branches to warehouses and start sending
+                prices and stock.</p>
+        </field>
+    </record>
+</odoo>

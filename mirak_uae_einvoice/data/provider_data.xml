@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo noupdate="1">
+    <!-- ready to try the whole flow before signing with an Accredited Service Provider -->
+    <record id="provider_mock" model="mirak.ae.provider">
+        <field name="name">Test provider (simulation)</field>
+        <field name="connector">mock</field>
+        <field name="environment">sandbox</field>
+        <field name="company_id" eval="False"/>
+        <field name="mock_behaviour">accept</field>
+    </record>
+</odoo>

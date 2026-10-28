@@ -1,0 +1,51 @@
+// Copyright 2026 Bouchibane Karim (Mirak). License OPL-1
+$mirak-ae-green: #00843D;
+$mirak-ae-red: #C8102E;
+
+.o_mirak_ae_dashboard, .o_mirak_ae_readiness {
+    .o_mirak_ae_card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--border-color, #dee2e6);
+        border-inline-start-width: 5px;
+        border-radius: .75rem;
+        background: var(--o-view-background-color, #fff);
+        text-align: start;
+        transition: box-shadow .15s, transform .15s;
+        &:hover { box-shadow: 0 .4rem 1rem rgba(0, 0, 0, .08); transform: translateY(-2px); }
+        .o_mirak_ae_card_value { font-size: 2.2rem; font-weight: 700; line-height: 1.1; }
+        .o_mirak_ae_card_label { color: var(--text-muted, #6c757d); font-size: .85rem; }
+    }
+    .o_mirak_ae_card_info { border-inline-start-color: #17a2b8; }
+    .o_mirak_ae_card_primary { border-inline-start-color: #714B67; }
+    .o_mirak_ae_card_success { border-inline-start-color: $mirak-ae-green; }
+    .o_mirak_ae_card_danger { border-inline-start-color: $mirak-ae-red; }
+
+    .o_mirak_ae_panel {
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--border-color, #dee2e6);
+        border-radius: .75rem;
+        background: var(--o-view-background-color, #fff);
+    }
+    .o_mirak_ae_panel_title {
+        font-weight: 600; text-transform: uppercase; font-size: .8rem; letter-spacing: .04em;
+        color: var(--text-muted, #6c757d); margin-bottom: .75rem;
+    }
+    .o_mirak_ae_countdown { font-size: 3rem; font-weight: 800; color: $mirak-ae-green; line-height: 1.1; }
+    .o_mirak_ae_countdown_done { font-size: 1.2rem; font-weight: 600; color: $mirak-ae-green; }
+
+    .o_mirak_ae_hero {
+        background: linear-gradient(135deg, rgba($mirak-ae-green, .10), rgba($mirak-ae-red, .06));
+        border: 1px solid rgba($mirak-ae-green, .25);
+    }
+    .o_mirak_ae_score {
+        width: 120px; height: 120px; border-radius: 50%; flex: 0 0 auto;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background: var(--o-view-background-color, #fff); border: 6px solid $mirak-ae-green; color: $mirak-ae-green;
+        &.text-danger { border-color: $mirak-ae-red; color: $mirak-ae-red; }
+        .o_mirak_ae_score_value { font-size: 2rem; font-weight: 800; line-height: 1; }
+    }
+}

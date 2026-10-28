@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="account_tax_form_mirak_ae" model="ir.ui.view">
+        <field name="name">account.tax.form.mirak.ae</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type_tax_use']" position="after">
+                <field name="mirak_ae_category"/>
+                <field name="mirak_ae_exemption_code" invisible="mirak_ae_category != 'E'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_tax_list_mirak_ae" model="ir.ui.view">
+        <field name="name">account.tax.list.mirak.ae</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="mirak_ae_category" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_taxes" model="ir.actions.act_window">
+        <field name="name">Tax Categories</field>
+        <field name="res_model">account.tax</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('type_tax_use', 'in', ('sale', 'purchase'))]</field>
+    </record>
+</odoo>

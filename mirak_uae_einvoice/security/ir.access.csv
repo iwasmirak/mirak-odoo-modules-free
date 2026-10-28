@@ -1,0 +1,12 @@
+id,name,model_id,group_id/id,operation,domain
+access_mirak_ae_provider_user,mirak.ae.provider user,mirak.ae.provider,group_mirak_ae_user,r,
+access_mirak_ae_provider_manager,mirak.ae.provider manager,mirak.ae.provider,group_mirak_ae_manager,crud,
+access_mirak_ae_log_user,mirak.ae.log user,mirak.ae.log,group_mirak_ae_user,r,
+access_mirak_ae_log_manager,mirak.ae.log manager,mirak.ae.log,group_mirak_ae_manager,crud,
+access_mirak_ae_send_wizard_user,mirak.ae.send.wizard user,mirak.ae.send.wizard,group_mirak_ae_user,crud,
+access_mirak_ae_import_wizard_user,mirak.ae.import.wizard user,mirak.ae.import.wizard,group_mirak_ae_user,crud,
+access_mirak_ae_readiness_user,mirak.ae.readiness user,mirak.ae.readiness,group_mirak_ae_user,crud,
+access_mirak_ae_readiness_line_user,mirak.ae.readiness.line user,mirak.ae.readiness.line,group_mirak_ae_user,crud,
+access_mirak_ae_dashboard_user,mirak.ae.dashboard user,mirak.ae.dashboard,group_mirak_ae_user,crud,
+rule_mirak_ae_provider_company,E-invoicing provider: own companies,mirak.ae.provider,,crud,"['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]"
+rule_mirak_ae_log_company,E-invoicing log: own companies,mirak.ae.log,,crud,"[('company_id', 'in', company_ids)]"

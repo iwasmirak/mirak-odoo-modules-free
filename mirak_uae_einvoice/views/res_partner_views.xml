@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="res_partner_form_mirak_ae" model="ir.ui.view">
+        <field name="name">res.partner.form.mirak.ae</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="UAE E-Invoicing" name="mirak_ae" groups="mirak_uae_einvoice.group_mirak_ae_user">
+                    <group>
+                        <group string="Tax and Peppol">
+                            <field name="mirak_ae_scope" widget="radio"/>
+                            <field name="mirak_ae_trn" placeholder="15 digits"/>
+                            <label for="mirak_ae_endpoint_id"/>
+                            <div class="d-flex gap-1">
+                                <field name="mirak_ae_endpoint_scheme" class="oe_inline" style="max-width: 5rem"/>
+                                <span>:</span>
+                                <field name="mirak_ae_endpoint_id" class="oe_inline" placeholder="10-digit TIN"/>
+                            </div>
+                            <label for="mirak_ae_peppol_status"/>
+                            <div>
+                                <field name="mirak_ae_peppol_status" widget="badge" class="oe_inline"
+                                       decoration-success="mirak_ae_peppol_status == 'registered'"
+                                       decoration-danger="mirak_ae_peppol_status == 'not_registered'"/>
+                                <button name="action_mirak_ae_check_peppol" type="object" string="Check on Peppol"
+                                        icon="fa-search" class="btn-link" invisible="not mirak_ae_endpoint_id"/>
+                                <field name="mirak_ae_peppol_checked" class="oe_inline text-muted"
+                                       invisible="not mirak_ae_peppol_checked"/>
+                            </div>
+                        </group>
+                        <group string="Legal Registration">
+                            <field name="mirak_ae_legal_id_type"/>
+                            <field name="mirak_ae_legal_id"/>
+                            <field name="mirak_ae_legal_authority" invisible="mirak_ae_legal_id_type != 'TL'"/>
+                            <field name="mirak_ae_emirate"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.mirak.ae</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="mirak_ae_applicable" invisible="1"/>
+                <button name="action_mirak_ae_send" type="object" string="Send E-Invoice" class="btn-primary"
+                        invisible="not mirak_ae_applicable or state != 'posted' or mirak_ae_state not in (False, 'draft', 'ready', 'error')"
+                        groups="mirak_uae_einvoice.group_mirak_ae_user"/>
+                <button name="action_mirak_ae_prevalidate" type="object" string="Check E-Invoice"
+                        invisible="not mirak_ae_applicable or state != 'posted' or mirak_ae_state in ('sent', 'accepted')"
+                        groups="mirak_uae_einvoice.group_mirak_ae_user"/>
+                <button name="action_mirak_ae_check_status" type="object" string="E-Invoice Status"
+                        invisible="mirak_ae_state != 'sent'" groups="mirak_uae_einvoice.group_mirak_ae_user"/>
+                <button name="action_mirak_ae_reset" type="object" string="Correct and Resend"
+                        invisible="mirak_ae_state not in ('rejected', 'error')"
+                        groups="mirak_uae_einvoice.group_mirak_ae_user"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="alert alert-danger d-flex justify-content-between align-items-center gap-3" role="alert"
+                     invisible="not mirak_ae_error_count or mirak_ae_state in ('sent', 'accepted')">
+                    <div>
+                        <i class="fa fa-exclamation-triangle me-1" title="Warning"/>
+                        <field name="mirak_ae_error_count" class="d-inline fw-bold"/> problem(s) block the e-invoice:
+                        see the <b>UAE E-Invoice</b> tab.
+                    </div>
+                    <div dir="rtl">توجد مشكلات تمنع إرسال الفاتورة الإلكترونية: راجع تبويب الفوترة الإلكترونية.</div>
+                </div>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                <div class="d-flex align-items-center gap-2 mb-2" invisible="not mirak_ae_state">
+                    <span class="text-muted small">E-Invoice</span>
+                    <field name="mirak_ae_state" widget="badge" readonly="1"
+                           decoration-muted="mirak_ae_state == 'draft'"
+                           decoration-info="mirak_ae_state in ('ready', 'sent')"
+                           decoration-success="mirak_ae_state == 'accepted'"
+                           decoration-danger="mirak_ae_state in ('rejected', 'error')"/>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="UAE E-Invoice" name="mirak_ae" invisible="not mirak_ae_applicable"
+                      groups="mirak_uae_einvoice.group_mirak_ae_user">
+                    <group>
+                        <group string="E-Invoice">
+                            <field name="mirak_ae_state" readonly="1"/>
+                            <field name="mirak_ae_uuid"/>
+                            <field name="mirak_ae_xml_id" invisible="not mirak_ae_xml_id"/>
+                            <field name="mirak_ae_reference" invisible="not mirak_ae_reference"/>
+                            <field name="mirak_ae_attempts" invisible="not mirak_ae_attempts"/>
+                            <field name="mirak_ae_last_attempt" invisible="not mirak_ae_last_attempt"/>
+                        </group>
+                        <group string="Document">
+                            <field name="mirak_ae_payment_means" invisible="move_type != 'out_invoice'"
+                                   readonly="state != 'draft'"/>
+                            <field name="mirak_ae_credit_reason" invisible="move_type != 'out_refund'"
+                                   required="move_type == 'out_refund' and mirak_ae_applicable and state == 'draft'"
+                                   readonly="state != 'draft'"/>
+                            <field name="mirak_ae_period_start" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_period_end" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_billing_frequency" readonly="state != 'draft'"/>
+                        </group>
+                    </group>
+                    <separator string="Pre-validation" invisible="not mirak_ae_issues_html"/>
+                    <field name="mirak_ae_issues_html" nolabel="1" readonly="1" invisible="not mirak_ae_issues_html"/>
+                    <group string="Transaction Type">
+                        <group>
+                            <field name="mirak_ae_tt_free_trade_zone" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_beneficiary_trn" invisible="not mirak_ae_tt_free_trade_zone"
+                                   required="mirak_ae_tt_free_trade_zone" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_deemed_supply" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_margin_scheme" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_summary_invoice" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="mirak_ae_tt_continuous_supply" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_agent_billing" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_principal_trn" invisible="not mirak_ae_tt_agent_billing"
+                                   required="mirak_ae_tt_agent_billing" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_ecommerce" readonly="state != 'draft'"/>
+                            <field name="mirak_ae_tt_exports" readonly="state != 'draft'"/>
+                        </group>
+                    </group>
+                    <group string="Last Message" invisible="not mirak_ae_message">
+                        <field name="mirak_ae_message" nolabel="1" colspan="2"/>
+                    </group>
+                    <separator string="Exchanges with the Service Provider" invisible="not mirak_ae_log_ids"/>
+                    <field name="mirak_ae_log_ids" nolabel="1" readonly="1" invisible="not mirak_ae_log_ids">
+                        <list>
+                            <field name="create_date"/>
+                            <field name="operation"/>
+                            <field name="result" widget="badge" decoration-success="result in ('accepted', 'ok')"
+                                   decoration-info="result == 'sent'"
+                                   decoration-danger="result in ('rejected', 'error', 'blocked')"/>
+                            <field name="attempt" optional="show"/>
+                            <field name="reference" optional="show"/>
+                            <field name="message"/>
+                        </list>
+                        <form>
+                            <group>
+                                <field name="create_date"/>
+                                <field name="provider_id"/>
+                                <field name="operation"/>
+                                <field name="result"/>
+                                <field name="reference"/>
+                                <field name="message"/>
+                                <field name="request"/>
+                                <field name="response"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_tree" model="ir.ui.view">
+        <field name="name">account.move.list.mirak.ae</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='status_in_payment']" position="after">
+                <field name="mirak_ae_state" string="E-Invoice" widget="badge" optional="show"
+                       decoration-muted="mirak_ae_state == 'draft'"
+                       decoration-info="mirak_ae_state in ('ready', 'sent')"
+                       decoration-success="mirak_ae_state == 'accepted'"
+                       decoration-danger="mirak_ae_state in ('rejected', 'error')"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.move.search.mirak.ae</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='draft']" position="before">
+                <filter name="mirak_ae_to_send" string="E-Invoice to Send"
+                        domain="[('mirak_ae_state', 'in', ('draft', 'ready', 'error'))]"/>
+                <filter name="mirak_ae_rejected" string="E-Invoice Rejected" domain="[('mirak_ae_state', '=', 'rejected')]"/>
+                <filter name="mirak_ae_accepted" string="E-Invoice Accepted" domain="[('mirak_ae_state', '=', 'accepted')]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//search" position="inside">
+                <filter name="mirak_ae_group_state" string="E-Invoice Status" context="{'group_by': 'mirak_ae_state'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

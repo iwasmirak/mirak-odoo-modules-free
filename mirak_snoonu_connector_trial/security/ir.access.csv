@@ -1,0 +1,15 @@
+id,name,model_id,group_id/id,operation,domain
+access_snoonu_account_user,snoonu.account user,snoonu.account,group_snoonu_user,r,
+access_snoonu_account_manager,snoonu.account manager,snoonu.account,group_snoonu_manager,crud,
+access_snoonu_branch_user,snoonu.branch user,snoonu.branch,group_snoonu_user,r,
+access_snoonu_branch_manager,snoonu.branch manager,snoonu.branch,group_snoonu_manager,crud,
+access_snoonu_product_user,snoonu.product user,snoonu.product,group_snoonu_user,cru,
+access_snoonu_product_manager,snoonu.product manager,snoonu.product,group_snoonu_manager,crud,
+access_snoonu_log_user,snoonu.log user,snoonu.log,group_snoonu_user,r,
+access_snoonu_log_manager,snoonu.log manager,snoonu.log,group_snoonu_manager,rd,
+access_snoonu_add_products_user,snoonu.add.products user,snoonu.add.products,group_snoonu_user,cru,
+access_snoonu_payload_preview_user,snoonu.payload.preview user,snoonu.payload.preview,group_snoonu_user,cru,
+snoonu_account_company_rule,Snoonu account: multi-company,snoonu.account,,crud,"[('company_id', 'in', company_ids)]"
+snoonu_branch_company_rule,Snoonu branch: multi-company,snoonu.branch,,crud,"[('company_id', 'in', company_ids)]"
+snoonu_product_company_rule,Snoonu product: multi-company,snoonu.product,,crud,"[('company_id', 'in', company_ids)]"
+snoonu_log_company_rule,Snoonu log: multi-company,snoonu.log,,crud,"[('company_id', 'in', company_ids)]"

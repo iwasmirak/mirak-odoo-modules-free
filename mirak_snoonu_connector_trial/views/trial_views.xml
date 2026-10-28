@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (20.0/legal/licenses.html) -->
+<odoo>
+    <record id="snoonu_account_view_form_trial" model="ir.ui.view">
+        <field name="name">snoonu.account.form.trial</field>
+        <field name="model">snoonu.account</field>
+        <field name="inherit_id" ref="mirak_snoonu_connector_trial.snoonu_account_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div class="alert alert-warning" role="alert" invisible="trial_days_left &gt; 3">
+                    <strong>Free trial:</strong>
+                    <field name="trial_days_left" class="oe_inline"/> day(s) left
+                    (until <field name="trial_expiry" class="oe_inline"/>).
+                    Buy the full version to keep synchronizing your catalogue.
+                </div>
+                <div class="alert alert-info" role="alert" invisible="trial_days_left &lt;= 3">
+                    <strong>Free trial</strong> — up to 25 products, 1 Snoonu account,
+                    <field name="trial_days_left" class="oe_inline"/> day(s) left.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
