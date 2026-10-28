@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <!-- ================================================================ Readiness Checker -->
+    <record id="view_mirak_ae_readiness_form" model="ir.ui.view">
+        <field name="name">mirak.ae.readiness.form</field>
+        <field name="model">mirak.ae.readiness</field>
+        <field name="arch" type="xml">
+            <form string="Readiness Checker" class="o_mirak_ae_readiness">
+                <field name="company_id" invisible="1"/>
+                <field name="level" invisible="1"/>
+                <div class="o_mirak_ae_hero d-flex align-items-center gap-4 p-3 mb-3 rounded-3"
+                     invisible="not level">
+                    <div class="o_mirak_ae_score">
+                        <div class="o_mirak_ae_score_value">
+                            <field name="score" class="d-inline"/><span>%</span>
+                        </div>
+                        <div class="small text-uppercase">Ready</div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h3 class="mb-1">
+                            <span invisible="level != 'high'">Your company is ready for UAE e-invoicing</span>
+                            <span invisible="level != 'mid'">Almost there: a few points to settle</span>
+                            <span invisible="level != 'low'">Let's get your company ready</span>
+                        </h3>
+                        <div class="text-muted mb-2" dir="rtl">
+                            <span invisible="level != 'high'">شركتك جاهزة للفوترة الإلكترونية في الإمارات</span>
+                            <span invisible="level != 'mid'">اقتربت من الجاهزية: بقيت بعض النقاط</span>
+                            <span invisible="level != 'low'">لنجهّز شركتك للفوترة الإلكترونية</span>
+                        </div>
+                        <field name="score" widget="progressbar" class="w-100"/>
+                        <div class="mt-2">
+                            <span class="badge rounded-pill text-bg-success me-1">
+                                <field name="ok_count" class="d-inline"/> OK
+                            </span>
+                            <span class="badge rounded-pill text-bg-warning" invisible="not todo_count">
+                                <field name="todo_count" class="d-inline"/> to fix
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <field name="line_ids" nolabel="1">
+                    <list create="0" delete="0" decoration-muted="ok" decoration-bf="not ok">
+                        <field name="ok" widget="boolean_toggle" readonly="1" nolabel="1" width="40px"/>
+                        <field name="section"/>
+                        <field name="name"/>
+                        <field name="name_ar" class="text-end"/>
+                        <field name="count" invisible="ok or not count" width="70px"/>
+                        <button name="action_fix" type="object" string="Fix" icon="fa-wrench"
+                                class="btn-sm btn-primary" invisible="ok"/>
+                    </list>
+                </field>
+                <footer>
+                    <button name="action_refresh" type="object" string="Check Again" icon="fa-refresh"
+                            class="btn-primary"/>
+                    <button special="cancel" string="Close" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_readiness" model="ir.actions.act_window">
+        <field name="name">Readiness Checker</field>
+        <field name="res_model">mirak.ae.readiness</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- ================================================================ Dashboard -->
+    <record id="view_mirak_ae_dashboard_form" model="ir.ui.view">
+        <field name="name">mirak.ae.dashboard.form</field>
+        <field name="model">mirak.ae.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="UAE E-Invoicing" create="0" edit="0" class="o_mirak_ae_dashboard">
+                <sheet>
+                    <field name="company_id" invisible="1"/>
+                    <field name="mandate_passed" invisible="1"/>
+                    <field name="trial_html" nolabel="1" readonly="1" class="w-100"/>
+                    <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+                        <div>
+                            <h1 class="mb-0">UAE E-Invoicing <small class="text-muted fs-5">الفوترة الإلكترونية</small></h1>
+                            <div class="text-muted">Peppol PINT-AE 1.0.4 · <field name="company_id" readonly="1"
+                                                                               class="d-inline" options="{'no_open': True}"/></div>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center">
+                            <span class="text-muted" invisible="not provider_id">Provider:</span>
+                            <field name="provider_id" readonly="1" options="{'no_open': True}" invisible="not provider_id"/>
+                            <field name="provider_environment" widget="badge" readonly="1" invisible="not provider_id"
+                                   decoration-success="provider_environment == 'production'"
+                                   decoration-warning="provider_environment == 'sandbox'"/>
+                            <span class="badge text-bg-danger" invisible="provider_id">No service provider</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-6 col-lg-3">
+                            <button name="action_open_to_send" type="object" class="o_mirak_ae_card o_mirak_ae_card_info">
+                                <span class="o_mirak_ae_card_value"><field name="count_to_send"/></span>
+                                <span class="o_mirak_ae_card_label">To send · للإرسال</span>
+                            </button>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <button name="action_open_sent" type="object" class="o_mirak_ae_card o_mirak_ae_card_primary">
+                                <span class="o_mirak_ae_card_value"><field name="count_sent"/></span>
+                                <span class="o_mirak_ae_card_label">Sent, awaiting · مُرسلة</span>
+                            </button>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <button name="action_open_accepted" type="object" class="o_mirak_ae_card o_mirak_ae_card_success">
+                                <span class="o_mirak_ae_card_value"><field name="count_accepted"/></span>
+                                <span class="o_mirak_ae_card_label">Accepted · مقبولة</span>
+                            </button>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <button name="action_open_problems" type="object" class="o_mirak_ae_card o_mirak_ae_card_danger">
+                                <span class="o_mirak_ae_card_value"><field name="count_problems"/></span>
+                                <span class="o_mirak_ae_card_label">Rejected / errors · مرفوضة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-lg-4">
+                            <div class="o_mirak_ae_panel h-100 text-center">
+                                <div class="o_mirak_ae_panel_title">Mandate countdown · العدّ التنازلي</div>
+                                <div invisible="mandate_date">
+                                    <p class="text-muted my-3">Set the date from which e-invoicing is mandatory for you.</p>
+                                    <button name="%(mirak_uae_einvoice.action_mirak_ae_settings)d" type="action"
+                                            string="Set the date" class="btn-secondary btn-sm"/>
+                                </div>
+                                <div invisible="not mandate_date or mandate_passed">
+                                    <div class="o_mirak_ae_countdown"><field name="days_left"/></div>
+                                    <div class="text-muted">days left · يومًا متبقيًا</div>
+                                </div>
+                                <div invisible="not mandate_passed" class="o_mirak_ae_countdown_done my-2">
+                                    <i class="fa fa-check-circle"/> E-invoicing is mandatory
+                                </div>
+                                <div class="small mt-2 d-flex justify-content-center gap-1" invisible="not mandate_date">
+                                    <span>From</span><field name="mandate_date" readonly="1"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="o_mirak_ae_panel h-100 text-center">
+                                <div class="o_mirak_ae_panel_title">Readiness · الجاهزية</div>
+                                <div class="o_mirak_ae_countdown"><field name="score"/>%</div>
+                                <field name="score" widget="progressbar" class="w-100 my-2"/>
+                                <div class="text-muted small mb-2" invisible="not todo_count">
+                                    <field name="todo_count" class="d-inline"/> point(s) to fix
+                                </div>
+                                <button name="action_open_readiness" type="object" string="Open the Readiness Checker"
+                                        icon="fa-check-square-o" class="btn-primary btn-sm"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="o_mirak_ae_panel h-100">
+                                <div class="o_mirak_ae_panel_title text-center">Actions</div>
+                                <div class="d-grid gap-2">
+                                    <button name="action_send_pending" type="object" string="Send pending e-invoices"
+                                            icon="fa-paper-plane" class="btn-primary"/>
+                                    <button name="action_open_import" type="object" string="Import vendor e-invoices"
+                                            icon="fa-download" class="btn-secondary"/>
+                                    <button name="%(mirak_uae_einvoice.action_mirak_ae_settings)d" type="action"
+                                            string="Settings" icon="fa-cog" class="btn-secondary"
+                                            groups="mirak_uae_einvoice.group_mirak_ae_manager"/>
+                                </div>
+                                <div class="text-muted small text-center mt-3" invisible="not count_total">
+                                    Acceptance rate: <field name="acceptance_rate" class="d-inline"/>%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_mirak_ae_panel" invisible="not problem_ids">
+                        <div class="o_mirak_ae_panel_title">Rejected or failed e-invoices · الفواتير المرفوضة</div>
+                        <field name="problem_ids" nolabel="1" readonly="1">
+                            <list>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                                <field name="invoice_date"/>
+                                <field name="amount_total_signed" string="Total"/>
+                                <field name="mirak_ae_state" widget="badge" decoration-danger="1"/>
+                                <field name="mirak_ae_message"/>
+                            </list>
+                        </field>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_dashboard_open" model="ir.actions.server">
+        <field name="name">UAE E-Invoicing Dashboard</field>
+        <field name="model_id" ref="model_mirak_ae_dashboard"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open()</field>
+    </record>
+
+    <record id="action_mirak_ae_invoices" model="ir.actions.act_window">
+        <field name="name">Customer E-Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('move_type', 'in', ('out_invoice', 'out_refund')), ('mirak_ae_state', '!=', False)]</field>
+        <field name="context">{'default_move_type': 'out_invoice'}</field>
+        <field name="view_id" ref="account.view_invoice_tree"/>
+    </record>
+
+    <record id="action_mirak_ae_log" model="ir.actions.act_window">
+        <field name="name">Exchange Log</field>
+        <field name="res_model">mirak.ae.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

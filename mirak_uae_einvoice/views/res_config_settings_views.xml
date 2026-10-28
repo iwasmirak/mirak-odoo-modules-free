@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.mirak.ae</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="UAE E-Invoicing" string="UAE E-Invoicing" name="mirak_uae_einvoice"
+                     groups="mirak_uae_einvoice.group_mirak_ae_manager">
+                    <div class="w-100"><field name="mirak_ae_trial_html" nolabel="1" readonly="1"/></div>
+                    <block title="Company Identifiers" name="mirak_ae_identifiers">
+                        <setting string="Tax Registration Number (TRN)" company_dependent="1"
+                                 help="15 digits issued by the Federal Tax Authority. Your Peppol ID is built from its first 10 digits (TIN).">
+                            <field name="mirak_ae_trn" placeholder="100123456700003"/>
+                            <div class="text-muted" invisible="not mirak_ae_tin">TIN: <field name="mirak_ae_tin" class="d-inline"/></div>
+                        </setting>
+                        <setting string="Peppol Participant ID" company_dependent="1"
+                                 help="Scheme 0235 + your TIN. Confirm it with your service provider at onboarding.">
+                            <div class="d-flex align-items-baseline gap-1">0235 : <field name="mirak_ae_endpoint_id"/></div>
+                        </setting>
+                        <setting string="Legal Registration" company_dependent="1"
+                                 help="Trade licence (or other registration) shown in every e-invoice.">
+                            <div class="row">
+                                <label for="mirak_ae_legal_id_type" class="col-4 o_light_label"/>
+                                <field name="mirak_ae_legal_id_type" class="col-8"/>
+                                <label for="mirak_ae_legal_id" class="col-4 o_light_label"/>
+                                <field name="mirak_ae_legal_id" class="col-8"/>
+                                <label for="mirak_ae_legal_authority" class="col-4 o_light_label"/>
+                                <field name="mirak_ae_legal_authority" class="col-8"/>
+                            </div>
+                        </setting>
+                        <setting string="Emirate" company_dependent="1" help="Emirate of the company address.">
+                            <field name="mirak_ae_emirate"/>
+                        </setting>
+                    </block>
+                    <block title="Accredited Service Provider (ASP)" name="mirak_ae_provider">
+                        <setting string="Service Provider" company_dependent="1"
+                                 help="The ASP that delivers your e-invoices on Peppol and reports them to the FTA.">
+                            <field name="mirak_ae_provider_id" options="{'no_create': True}"/>
+                            <div class="mt-2" invisible="not mirak_ae_provider_id">
+                                <field name="mirak_ae_provider_environment" widget="badge" readonly="1"/>
+                                <button name="action_mirak_ae_test_connection" type="object" string="Test Connection"
+                                        icon="fa-plug" class="btn-link"/>
+                                <button name="%(mirak_uae_einvoice.action_mirak_ae_provider)d" type="action"
+                                        string="Configure Providers" icon="fa-arrow-right" class="btn-link"/>
+                            </div>
+                        </setting>
+                        <setting string="Send When Posted" company_dependent="1"
+                                 help="Validate and send customer invoices and credit notes as soon as they are posted.">
+                            <field name="mirak_ae_auto_send"/>
+                        </setting>
+                        <setting string="Automatic Retries" company_dependent="1"
+                                 help="How many times a failed sending is retried automatically.">
+                            <field name="mirak_ae_max_attempts"/>
+                        </setting>
+                    </block>
+                    <block title="Mandate" name="mirak_ae_mandate">
+                        <setting string="E-Invoicing Mandatory From" company_dependent="1"
+                                 help="Phased implementation of Ministerial Decision No. 244 of 2025. Check your exact date with the FTA.">
+                            <field name="mirak_ae_mandate_phase"/>
+                            <field name="mirak_ae_mandate_date"/>
+                            <div class="mt-1 fw-bold" invisible="not mirak_ae_mandate_date or mirak_ae_days_left &lt;= 0">
+                                <field name="mirak_ae_days_left" class="d-inline"/> days left
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'module': 'mirak_uae_einvoice', 'bin_size': False}</field>
+    </record>
+</odoo>

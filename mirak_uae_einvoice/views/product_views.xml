@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.mirak.ae</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="account.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='invoicing']" position="inside">
+                <group string="UAE E-Invoicing" name="mirak_ae" groups="mirak_uae_einvoice.group_mirak_ae_user">
+                    <group>
+                        <field name="mirak_ae_item_type"/>
+                        <field name="mirak_ae_hs_code" invisible="mirak_ae_item_type not in ('G', 'B')"
+                               required="mirak_ae_item_type in ('G', 'B')"/>
+                        <field name="mirak_ae_sac_code" invisible="mirak_ae_item_type not in ('S', 'B')"
+                               required="mirak_ae_item_type in ('S', 'B')"/>
+                    </group>
+                    <group>
+                        <field name="mirak_ae_goods_type"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

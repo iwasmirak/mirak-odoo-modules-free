@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="view_mirak_ae_import_wizard_form" model="ir.ui.view">
+        <field name="name">mirak.ae.import.wizard.form</field>
+        <field name="model">mirak.ae.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Vendor E-Invoices">
+                <p class="text-muted" invisible="result">Upload the PINT-AE XML files received from your suppliers. The
+                    supplier is found from its TRN (or Peppol ID, or name), products from their code, barcode or name,
+                    taxes from the PINT-AE tax category.</p>
+                <group invisible="result">
+                    <field name="attachment_ids" widget="many2many_binary" string="XML Files"/>
+                    <field name="journal_id"/>
+                    <field name="create_partners"/>
+                    <field name="company_id" invisible="1"/>
+                </group>
+                <group invisible="not result">
+                    <field name="result" nolabel="1" colspan="2"/>
+                    <field name="move_ids" nolabel="1" colspan="2" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button name="action_import" type="object" string="Import" class="btn-primary" invisible="result"/>
+                    <button special="cancel" string="Close" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_import_wizard" model="ir.actions.act_window">
+        <field name="name">Import Vendor E-Invoices</field>
+        <field name="res_model">mirak.ae.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

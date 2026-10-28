@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="mirak_ae_provider_list" model="ir.ui.view">
+        <field name="name">mirak.ae.provider.list</field>
+        <field name="model">mirak.ae.provider</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="connector"/>
+                <field name="environment" widget="badge" decoration-success="environment == 'production'"
+                       decoration-warning="environment == 'sandbox'"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="last_test_ok" string="Last Test OK"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mirak_ae_provider_form" model="ir.ui.view">
+        <field name="name">mirak.ae.provider.form</field>
+        <field name="model">mirak.ae.provider</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test_connection" type="object" string="Test Connection" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. My Accredited Service Provider"/></h1>
+                    </div>
+                    <group>
+                        <group string="Provider">
+                            <field name="connector"/>
+                            <field name="environment" widget="radio"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group string="Last Test">
+                            <field name="last_test_date"/>
+                            <field name="last_test_ok"/>
+                            <field name="last_test_message"/>
+                        </group>
+                    </group>
+                    <group string="Simulation" invisible="connector != 'mock'">
+                        <field name="mock_behaviour" widget="radio"/>
+                    </group>
+                    <notebook invisible="connector != 'rest'">
+                        <page string="Connection" name="connection">
+                            <group>
+                                <field name="api_url" placeholder="https://api.provider.ae/v1"/>
+                                <field name="api_key" password="True"/>
+                                <field name="auth_header"/>
+                                <field name="auth_prefix"/>
+                                <field name="timeout"/>
+                            </group>
+                        </page>
+                        <page string="API Paths" name="paths">
+                            <group>
+                                <field name="test_path"/>
+                                <field name="send_path"/>
+                                <field name="status_path"/>
+                                <field name="lookup_path"/>
+                            </group>
+                        </page>
+                        <page string="Answer Format" name="json">
+                            <group>
+                                <field name="json_id_key"/>
+                                <field name="json_status_key"/>
+                                <field name="json_message_key"/>
+                                <field name="json_registered_key"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mirak_ae_provider" model="ir.actions.act_window">
+        <field name="name">Service Providers (ASP)</field>
+        <field name="res_model">mirak.ae.provider</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_snoonu_account_user,snoonu.account user,model_snoonu_account,group_snoonu_user,1,0,0,0
+access_snoonu_account_manager,snoonu.account manager,model_snoonu_account,group_snoonu_manager,1,1,1,1
+access_snoonu_branch_user,snoonu.branch user,model_snoonu_branch,group_snoonu_user,1,0,0,0
+access_snoonu_branch_manager,snoonu.branch manager,model_snoonu_branch,group_snoonu_manager,1,1,1,1
+access_snoonu_product_user,snoonu.product user,model_snoonu_product,group_snoonu_user,1,1,1,0
+access_snoonu_product_manager,snoonu.product manager,model_snoonu_product,group_snoonu_manager,1,1,1,1
+access_snoonu_log_user,snoonu.log user,model_snoonu_log,group_snoonu_user,1,0,0,0
+access_snoonu_log_manager,snoonu.log manager,model_snoonu_log,group_snoonu_manager,1,0,0,1
+access_snoonu_add_products_user,snoonu.add.products user,model_snoonu_add_products,group_snoonu_user,1,1,1,0
+access_snoonu_payload_preview_user,snoonu.payload.preview user,model_snoonu_payload_preview,group_snoonu_user,1,1,1,0

@@ -1,0 +1,9 @@
+Copyright 2026 Bouchibane Karim (Mirak) - contact@ocloo.tech
+
+Licensed under the Odoo Proprietary License v1.0 (OPL-1), see the LICENSE file.
+
+Included third-party material, distributed under its own terms:
+- static/schemas/ubl-2.1: OASIS Universal Business Language 2.1 schemas (OASIS IPR Policy)
+  https://docs.oasis-open.org/ubl/os-UBL-2.1/
+- static/schematron/pint-ae-1.0.4: OpenPeppol PINT-AE 1.0.4 validation artefacts
+  https://docs.peppol.eu/poac/ae/
