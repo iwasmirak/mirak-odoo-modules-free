@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim (Mirak). License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="view_mirak_ae_log_list" model="ir.ui.view">
+        <field name="name">mirak.ae.log.list</field>
+        <field name="model">mirak.ae.log</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="create_date"/>
+                <field name="move_id"/>
+                <field name="operation"/>
+                <field name="result" widget="badge" decoration-success="result in ('accepted', 'ok')"
+                       decoration-info="result == 'sent'" decoration-danger="result in ('rejected', 'error', 'blocked')"/>
+                <field name="provider_id" optional="show"/>
+                <field name="reference" optional="show"/>
+                <field name="message"/>
+                <field name="company_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mirak_ae_log_form" model="ir.ui.view">
+        <field name="name">mirak.ae.log.form</field>
+        <field name="model">mirak.ae.log</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="move_id"/>
+                            <field name="operation"/>
+                            <field name="result"/>
+                            <field name="attempt"/>
+                        </group>
+                        <group>
+                            <field name="create_date"/>
+                            <field name="provider_id"/>
+                            <field name="reference"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="message"/>
+                        <field name="request"/>
+                        <field name="response"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mirak_ae_log_search" model="ir.ui.view">
+        <field name="name">mirak.ae.log.search</field>
+        <field name="model">mirak.ae.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="move_id"/>
+                <field name="reference"/>
+                <filter name="failed" string="Failed" domain="[('result', 'in', ('rejected', 'error', 'blocked'))]"/>
+                <filter name="group_result" string="Result" context="{'group_by': 'result'}"/>
+                <filter name="group_operation" string="Operation" context="{'group_by': 'operation'}"/>
+            </search>
+        </field>
+    </record>
+
+    <menuitem id="menu_mirak_ae_root" name="UAE E-Invoicing" web_icon="mirak_uae_einvoice,static/description/icon.png"
+              action="action_mirak_ae_dashboard_open" groups="group_mirak_ae_user" sequence="46"/>
+
+    <menuitem id="menu_mirak_ae_dashboard" name="Dashboard" parent="menu_mirak_ae_root"
+              action="action_mirak_ae_dashboard_open" sequence="1"/>
+
+    <menuitem id="menu_mirak_ae_documents" name="Documents" parent="menu_mirak_ae_root" sequence="10"/>
+    <menuitem id="menu_mirak_ae_invoices" name="Customer E-Invoices" parent="menu_mirak_ae_documents"
+              action="action_mirak_ae_invoices" sequence="10"/>
+    <menuitem id="menu_mirak_ae_import" name="Import Vendor E-Invoices" parent="menu_mirak_ae_documents"
+              action="action_mirak_ae_import_wizard" sequence="20"/>
+    <menuitem id="menu_mirak_ae_log" name="Exchange Log" parent="menu_mirak_ae_documents"
+              action="action_mirak_ae_log" sequence="30"/>
+
+    <menuitem id="menu_mirak_ae_readiness" name="Readiness Checker" parent="menu_mirak_ae_root"
+              action="action_mirak_ae_readiness" sequence="20"/>
+
+    <menuitem id="menu_mirak_ae_config" name="Configuration" parent="menu_mirak_ae_root" sequence="90"
+              groups="group_mirak_ae_manager"/>
+    <menuitem id="menu_mirak_ae_settings" name="Settings" parent="menu_mirak_ae_config"
+              action="action_mirak_ae_settings" sequence="10"/>
+    <menuitem id="menu_mirak_ae_providers" name="Service Providers (ASP)" parent="menu_mirak_ae_config"
+              action="action_mirak_ae_provider" sequence="20"/>
+    <menuitem id="menu_mirak_ae_taxes" name="Tax Categories" parent="menu_mirak_ae_config"
+              action="action_mirak_ae_taxes" sequence="30"/>
+</odoo>

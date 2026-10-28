@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2026 Bouchibane Karim. License OPL-1 (https://www.odoo.com/documentation/19.0/legal/licenses.html) -->
+<odoo>
+    <record id="snoonu_log_view_list" model="ir.ui.view">
+        <field name="name">snoonu.log.list</field>
+        <field name="model">snoonu.log</field>
+        <field name="arch" type="xml">
+            <tree string="Snoonu Logs" create="0" edit="0" decoration-danger="state == 'error'">
+                <field name="create_date" string="Date"/>
+                <field name="account_id"/>
+                <field name="trigger"/>
+                <field name="sku_count"/>
+                <field name="http_status"/>
+                <field name="duration"/>
+                <field name="state" widget="badge" decoration-success="state == 'success'"
+                       decoration-danger="state == 'error'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="snoonu_log_view_form" model="ir.ui.view">
+        <field name="name">snoonu.log.form</field>
+        <field name="model">snoonu.log</field>
+        <field name="arch" type="xml">
+            <form string="Snoonu Log" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="create_date" string="Date"/>
+                            <field name="trigger"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="http_status"/>
+                            <field name="sku_count"/>
+                            <field name="duration"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Snoonu Response" name="response">
+                            <field name="response" widget="code" options="{'mode': 'json'}"/>
+                        </page>
+                        <page string="Request Sent" name="request">
+                            <field name="request" widget="code" options="{'mode': 'json'}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="snoonu_log_view_search" model="ir.ui.view">
+        <field name="name">snoonu.log.search</field>
+        <field name="model">snoonu.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="account_id"/>
+                <filter name="errors" string="Errors" domain="[('state', '=', 'error')]"/>
+                <filter name="auto" string="Automatic" domain="[('trigger', '=', 'cron')]"/>
+                <group>
+                    <filter name="by_account" string="Account" context="{'group_by': 'account_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="snoonu_log_action" model="ir.actions.act_window">
+        <field name="name">Snoonu Logs</field>
+        <field name="res_model">snoonu.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
